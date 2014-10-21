@@ -3,6 +3,14 @@
 	{
 		"selected_items":
 		[
+			[
+				"is",
+				"i_stream"
+			],
+			[
+				"clear",
+				"clearScrean"
+			]
 		]
 	},
 	"buffers":
@@ -11,7 +19,23 @@
 			"file": "lab1/Makefile",
 			"settings":
 			{
-				"buffer_size": 89,
+				"buffer_size": 2047,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pawel/Desktop/zad1/src/main.cpp",
+			"settings":
+			{
+				"buffer_size": 4580,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab1/src/main.cpp",
+			"settings":
+			{
+				"buffer_size": 1321,
 				"line_ending": "Unix"
 			}
 		}
@@ -53,6 +77,9 @@
 	],
 	"file_history":
 	[
+		"/media/usb0/Ubuntu-29.09.2014/catkin_ws/src/czlapacz1/src/talker.cpp",
+		"/media/usb0/Ubuntu-29.09.2014/catkin_ws/src/czlapacz1/src/czlapacz_node.cpp",
+		"/media/usb0/Ubuntu-29.09.2014/catkin_ws/src/czlapacz1/src/moja.cpp",
 		"/home/pawel/Desktop/Git/zamp/lab1/unix/Makefile"
 	],
 	"find":
@@ -88,7 +115,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -97,15 +124,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 89,
+						"buffer_size": 2047,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9,
-								9
+								1124,
+								1124
 							]
 						],
 						"settings":
@@ -113,10 +140,69 @@
 							"syntax": "Packages/Makefile/Makefile.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 86.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/pawel/Desktop/zad1/src/main.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4580,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								901,
+								901
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 1607.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lab1/src/main.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								577,
+								577
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 480.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

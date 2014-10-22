@@ -15,6 +15,8 @@ using namespace std;
 
 #define LINE_SIZE 100
 
+
+
 /*!
  * \brief Zapisuje do strumienia współrzędne punktów
  *
@@ -42,125 +44,200 @@ using namespace std;
  *  \retval true - jeśli operacja powiodła się.
  *  \retval false - w przypadku przeciwnym.
  */
-	bool Zapisz( const vector<Wektor2D>& ZbPunktow, ostream&  StrmWy)
+
+
+
+class FacePart
+{
+protected:
+	int cx, cy;
+	PzG::LaczeDoGNUPlota&  lacze;
+	std::string file;
+
+public:
+	FacePart(PzG::LaczeDoGNUPlota&  lacze, std::string file, int cx, int cy):lacze(lacze), file(file), cx(cx), cy(cy)
 	{
-		for (auto Elem : ZbPunktow) {
-		StrmWy << Elem << endl;
+
+	}
+
+	//virtual bool analyze(istringstream i_stream) = 0;
+
+protected:
+	bool saveFile( const vector<Wektor2D>& points, ostream&  out)
+	{
+
+		for (auto p : points) 
+		{
+			p.x += cx;
+			p.y += cy;
+			out << p << endl;
 		}
-		return !StrmWy.fail();
+		return !out.fail();
+	}
+
+	void trnslate(vector<Wektor2D>& points, int x, int y)
+	{
+		for (auto& p : points) 
+		{
+			p.x += x;
+			p.y += y;
+		}
+		
 	}
 
 
+};
 
-
-/*!
- *  Funkcja tworzy łamaną, która ma reprezentować 
- *  zarys ust. Współrzędne poszczególnych wierzchołków
- *  łamanej zapisywane są do pliku o podanej przez parametr nazwie.
- *  \param[in] sNazwaPliku - nazwa pliku, do którego mają zostać zapisane
- *                           współrzędne punktów.
- *  \post Zostaje utworzony plik w którym zapisane zostają współrzędne
- *        wierzchołków reprezentujących górną i dolną wargę. 
- *        Współrzędne obu łamanych są w pliku oddzielone jedną wolną linią.
- *
- *  \retval true - jeśli operacja powiodła się.
- *  \retval false - w przypadku przeciwnym.
- */
-bool ZbudujUsta(const char *sNazwaPliku)
+class Oko : public FacePart
 {
-  ofstream  StrmWy(sNazwaPliku);
+private:
+	int up, down;
 
-  if (!StrmWy.is_open()) return false;
+public:
+	Oko(PzG::LaczeDoGNUPlota&  lacze, std::string file, int cx, int cy):FacePart(lacze,file,cx,cy)
+	{
 
-  vector<Wektor2D>  GornaWarga = { {-20,0}, {-5,10}, {0,5}, {5,10}, {20,0} };
-  vector<Wektor2D>  DolnaWarga = { {-20,0}, {0,-10}, {20,0} };
+	}
+
+	void animate(int new_up, int new_down, int v)
+	{
+		for(int i = 0; i < 10; i++)
+		{
+			save(up + (new_up - up) * (i+1) / 10.0,
+				down + (new_down - down) * (i+1) / 10.0);
+			lacze.Rysuj();
+			std::chrono::milliseconds duration((int)((1000.0f*100.0f/v)/10.0f));
+			std::this_thread::sleep_for(duration);
+		}
+
+		up = new_up;
+		down = new_down;
+	}
+
+	void init(int up, int down)
+	{
+		this->up = up;
+		this->down = down;
+	}
+
+	bool save()
+	{
+		return save(up, down);
+	}
+
+	bool save(int up, int down)
+	{
+		ofstream  out(file);
+
+		if (!out.is_open()) return false;
+
+		vector<Wektor2D>  GornaPowieka = { {-12,0}, {-5,up}, {5,up}, {12,0} };
+		vector<Wektor2D>  DolnaPowieka = { {-12,0}, {-5,down}, {5,down}, {12,0} };
 
 
-  if (!Zapisz(GornaWarga,StrmWy)) return false;
-  StrmWy << endl;
-  if (!Zapisz(DolnaWarga,StrmWy)) return false;
-  return true;
-}
+		if (!saveFile(GornaPowieka,out)) return false;
+		out << endl;
+		if (!saveFile(DolnaPowieka,out)) return false;
+		return true;
+	}
+
+};
 
 
-
-
-
-/*!
- *  Funkcja tworzy łamaną, która ma reprezentować 
- *  zarys oka. Współrzędne poszczególnych wierzchołków
- *  łamanej zapisywane są do pliku o podanej przez parametr nazwie.
- *  \param[in] sNazwaPliku - nazwa pliku, do którego mają zostać zapisane
- *                           współrzędne punktów.
- *  \post Zostaje utworzony plik w którym zapisane zostają współrzędne
- *        wierzchołków reprezentujących górną i dolną powiekę. 
- *        Współrzędne obu łamanych są w pliku oddzielone jedną wolną linią.
- *
- *  \retval true - jeśli operacja powiodła się.
- *  \retval false - w przypadku przeciwnym.
- */
-bool ZbudujOko(const char *sNazwaPliku, int id, int gorna, int dolna)
+class Usta : public FacePart
 {
-  ofstream  StrmWy(sNazwaPliku);
+private:
+	int up, down, side;
 
-  if (!StrmWy.is_open()) return false;
+public:
+	Usta(PzG::LaczeDoGNUPlota&  lacze, std::string file, int cx, int cy):FacePart(lacze,file,cx,cy)
+	{
 
-  const int srodek = 50;
-  vector<Wektor2D>  GornaPowieka = { {-12,srodek}, {-5,srodek+gorna}, {5,srodek+gorna}, {12,srodek} };
-  vector<Wektor2D>  DolnaPowieka = { {-12,srodek}, {-5,srodek+dolna}, {5,srodek+dolna}, {12,srodek} };
-  if(id == 1)
-  {
-  	for (auto& e : GornaPowieka) {
-  		e.x = e.x + 30;
-  	}
-  	for (auto& e : DolnaPowieka) {
-  		e.x = e.x + 30;
-  	}
-  }
+	}
 
-  if (!Zapisz(GornaPowieka,StrmWy)) return false;
-  StrmWy << endl;
-  if (!Zapisz(DolnaPowieka,StrmWy)) return false;
-  return true;
-}
+	void animate(int new_up, int new_down, int new_side, int v)
+	{
+		for(int i = 0; i < 10; i++)
+		{
+			save(up + (new_up - up) * (i+1) / 10.0,
+				down + (new_down - down) * (i+1) / 10.0,
+				side + (new_side - side) * (i+1) / 10.0);
+			lacze.Rysuj();
+			std::chrono::milliseconds duration((int)((1000.0f*100.0f/v)/10.0f));
+			std::this_thread::sleep_for(duration);
+		}
+
+		up = new_up;
+		down = new_down;
+		side = new_side;
+	}
+
+	void init(int up, int down, int side)
+	{
+		this->up = up;
+		this->down = down;
+		this->side = side;
+	}
+
+	bool save()
+	{
+		return save(up, down, side);
+	}
+
+	bool save(int up, int down, int side)
+	{
+		ofstream  out(file);
+
+		if (!out.is_open()) return false;
+
+
+		vector<Wektor2D>  GornaWarga = { {-20-side,0}, {-5,up}, {0,up-5}, {5,up}, {20+side,0} };
+		vector<Wektor2D>  DolnaWarga = { {-20-side,0}, {0,down}, {20+side,0} };
+
+
+		if (!saveFile(GornaWarga,out)) return false;
+		out << endl;
+		if (!saveFile(DolnaWarga,out)) return false;
+		return true;
+	}
+
+};
 
 
 
 
-class Glowna
+class ProgramExecuter
 {
 
 private:
-	PzG::LaczeDoGNUPlota  Lacze;
-	int last_usta_p1,last_usta_p2,last_usta_p3;
-	int last_oko[2][2] = {{20,-20}, {20,-20}};
-	//bool oko_init[2] = {false, false};
+	PzG::LaczeDoGNUPlota  lacze;
+	vector<shared_ptr<Oko>> oka;
+	shared_ptr<Usta> usta;
 
 public:
 
-	Glowna()
+	ProgramExecuter()
 	{
-		Lacze.DodajNazwePliku("usta.dat",PzG::RR_Ciagly,6);
-		Lacze.DodajNazwePliku("oko0.dat",PzG::RR_Ciagly,6);
-		Lacze.DodajNazwePliku("oko1.dat",PzG::RR_Ciagly,6);
-		Lacze.Inicjalizuj();  // Tutaj startuje gnuplot.
-		Lacze.ZmienTrybRys(PzG::TR_2D);
+		lacze.DodajNazwePliku("usta.dat",PzG::RR_Ciagly,6);
+		lacze.DodajNazwePliku("oko0.dat",PzG::RR_Ciagly,6);
+		lacze.DodajNazwePliku("oko1.dat",PzG::RR_Ciagly,6);
+		lacze.Inicjalizuj();  // Tutaj startuje gnuplot.
+		lacze.ZmienTrybRys(PzG::TR_2D);
 
-		ZbudujOko("oko0.dat",0, 20 ,-20);
-		ZbudujOko("oko1.dat",1, 20 ,-20);
+		oka.push_back(make_shared<Oko>(lacze, "oko0.dat", 0, 50));
+		oka.push_back(make_shared<Oko>(lacze, "oko1.dat", 50, 50));
+		oka[0]->init(20, -20);
+		oka[1]->init(20, -20);
+		oka[0]->save();
+		oka[1]->save();
 
-		Lacze.UstawZakresY(-100,150);
-		Lacze.UstawZakresX(-35,90);
-		Lacze.Rysuj();
-	}
+		usta = make_shared<Usta>(lacze, "usta.dat", 25, 0);
+		usta->init(10, -10, 20);
+		usta->save();
 
-	bool Zapisz( const vector<Wektor2D>& ZbPunktow, ostream&  StrmWy, double TransY = 0 )
-	{
-		for (auto Elem : ZbPunktow) {
-		Elem.y += TransY;
-		StrmWy << Elem << endl;
-		}
-		return !StrmWy.fail();
+		lacze.UstawZakresY(-100,150);
+		lacze.UstawZakresX(-35,90);
+		lacze.Rysuj();
 	}
 
 	bool execPreprocesor(const char* fileName, istringstream &iSStream)
@@ -183,40 +260,21 @@ public:
 
 	bool Animuj_Oko(istringstream& i_stream)
 	{
-		int id, gora, dol, v;
+		int id, up, down, v;
 		char c;
-		i_stream >> id >> c >> dol >> c >> gora >> c >> v >> c;
-		cout << "Animuje oko " << id << ", " << gora << ", " << dol << ", " << v << "\n"; 
-		//if(oko_init[id])
-		for(int i = 0; i < 10; i++)
-		{
-			ZbudujOko(("oko"+std::to_string(id)+".dat").c_str(), 
-				id,
-				last_oko[id][0] + (gora - last_oko[id][0]) * (i+1) / 10.0,
-				last_oko[id][1] + (dol - last_oko[id][1]) * (i+1) / 10.0);
-			Lacze.Rysuj();
-			std::chrono::milliseconds przerwa((int)((1000.0f*100.0f/v)/10.0f));
-			std::this_thread::sleep_for(przerwa);
-		}
-		//else
-		//{
-		//	oko_init[id] = true;
-		//	ZbudujOko(("oko"+std::to_string(id)+".dat").c_str(), id, gora, dol);
-		//	Lacze.Rysuj();	
-		//}
-
-
-		last_oko[id][0] = gora;
-		last_oko[id][1] = dol;
+		i_stream >> id >> c >> down >> c >> up >> c >> v >> c;
+		//cout << "Animuje oko " << id << ", " << up << ", " << down << ", " << v << "\n"; 
+		oka[id]->animate(up, down, v);
 		return true;
 	}
 
 	bool Animuj_Usta(istringstream& i_stream)
 	{
-		int id, gora, dol, v;
+		int side, up, down, v;
 		char c;
-		i_stream >> id >> c >> gora >> c >> dol >> c >> v >> c;
-		cout << "Animuje usto " << id << ", " << gora << ", " << dol << ", " << v << "\n"; 
+		i_stream >> down >> c >> up >> c >> side >> c >> v >> c;
+		//cout << "Animuje usto " << id << ", " << gora << ", " << dol << ", " << v << "\n"; 
+		usta->animate(up, down, side, v);
 		return true;
 	}
 
@@ -269,8 +327,8 @@ void processFile()
 	cout << "Podaj nazwe pliku:\n";
 	string fileName;
 	cin >> fileName;
-	Glowna gowna;
-	gowna.execute(fileName);
+	ProgramExecuter executer;
+	executer.execute(fileName);
 }
 
 
@@ -280,9 +338,6 @@ int main()
 
 	bool done = false;
 	int choosen = 0;
-
-	//ZbudujOko("oko.dat");
-	//ZbudujUsta("usta.dat");
 
 	while(!done)
 	{
@@ -302,15 +357,3 @@ int main()
 	if(choosen == 0)
 		processFile();
 }
-		// std::chrono::milliseconds dura(100);
-		// for(int i = 0; i < 1000; i++)
-		// {
-		// std::this_thread::sleep_for(dura);
-		// ZbudujOko2("oko.dat");
-
-		// Lacze.Rysuj(); 
-		// std::this_thread::sleep_for(dura);
-		// ZbudujOko("oko.dat");
-
-		// Lacze.Rysuj(); 
-		// }

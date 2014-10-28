@@ -43,7 +43,7 @@
 			"file": "lab1/Makefile",
 			"settings":
 			{
-				"buffer_size": 2454,
+				"buffer_size": 2662,
 				"line_ending": "Unix"
 			}
 		},
@@ -51,40 +51,31 @@
 			"file": "lab1/src/main.cpp",
 			"settings":
 			{
-				"buffer_size": 3848,
+				"buffer_size": 1241,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lab1/inc/Usta.hh",
+			"file": "lab1/inc/ProgramExecutor.hh",
 			"settings":
 			{
-				"buffer_size": 340,
-				"line_ending": "Unix",
-				"name": "#pragma once"
-			}
-		},
-		{
-			"file": "lab1/src/Usta.cpp",
-			"settings":
-			{
-				"buffer_size": 1174,
+				"buffer_size": 1951,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lab1/inc/lacze_do_gnuplota.hh",
+			"file": "lab1/src/ProgramExecutor.cpp",
 			"settings":
 			{
-				"buffer_size": 23533,
+				"buffer_size": 2863,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lab1/inc/Oko.hh",
+			"file": "lab1/src/FacePart.cpp",
 			"settings":
 			{
-				"buffer_size": 297,
+				"buffer_size": 476,
 				"line_ending": "Unix"
 			}
 		},
@@ -92,15 +83,23 @@
 			"file": "lab1/src/Oko.cpp",
 			"settings":
 			{
-				"buffer_size": 1042,
+				"buffer_size": 1088,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lab1/wejscie",
+			"file": "lab1/src/Usta.cpp",
 			"settings":
 			{
-				"buffer_size": 534,
+				"buffer_size": 1252,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab1/inc/FacePart.h",
+			"settings":
+			{
+				"buffer_size": 1268,
 				"line_ending": "Unix"
 			}
 		}
@@ -138,17 +137,21 @@
 	[
 		"/home/pawel/Desktop/Git/zamp/lab1",
 		"/home/pawel/Desktop/Git/zamp/lab1/inc",
-		"/home/pawel/Desktop/Git/zamp/lab1/libs",
 		"/home/pawel/Desktop/Git/zamp/lab1/src"
 	],
 	"file_history":
 	[
+		"/home/pawel/Desktop/Git/zamp/lab1/src/Oko.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab1/inc/Oko.hh",
+		"/home/pawel/Desktop/Git/zamp/lab1/inc/lacze_do_gnuplota.hh",
+		"/home/pawel/Desktop/Git/zamp/lab1/src/Usta.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab1/inc/Usta.hh",
+		"/home/pawel/Desktop/Git/zamp/lab1/wejscie",
 		"/home/pawel/Desktop/Git/zamp/lab1/src/lacze_do_gnuplota.cpp",
 		"/home/pawel/Desktop/Git/zamp/lab1/src/FacePart.cpp",
 		"/home/pawel/Desktop/Git/zamp/lab1/inc/FacePart.h",
 		"/home/pawel/Desktop/Git/zamp/lab1/src/main.cpp",
 		"/home/pawel/Desktop/zad1/src/main.cpp",
-		"/home/pawel/Desktop/Git/zamp/lab1/inc/lacze_do_gnuplota.hh",
 		"/media/pawel/MYLINUXLIVE/lab1/src/main.cpp",
 		"/home/pawel/Desktop/Git/zamp/lab1/src/plik",
 		"/media/usb0/Ubuntu-29.09.2014/catkin_ws/src/czlapacz1/src/talker.cpp",
@@ -191,7 +194,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -200,122 +203,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2454,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1309,
-								1309
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Makefile/Makefile.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 190.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "lab1/src/main.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3848,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2593,
-								2593
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2010.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "lab1/inc/Usta.hh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 340,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								35,
-								35
-							]
-						],
-						"settings":
-						{
-							"auto_name": "#pragma once",
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "lab1/src/Usta.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1174,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								96,
-								96
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 35.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "lab1/inc/lacze_do_gnuplota.hh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 23533,
+						"buffer_size": 2662,
 						"regions":
 						{
 						},
@@ -328,61 +216,89 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Makefile/Makefile.tmLanguage"
 						},
-						"translation.x": -0.0,
-						"translation.y": 9681.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "lab1/inc/Oko.hh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 297,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								294,
-								294
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 190.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "lab1/src/Oko.cpp",
+					"buffer": 1,
+					"file": "lab1/src/main.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1042,
+						"buffer_size": 1241,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								95,
-								19
+								1157,
+								1157
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lab1/inc/ProgramExecutor.hh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1951,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								574,
+								574
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 855.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lab1/src/ProgramExecutor.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2863,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2856,
+								2856
 							]
 						],
 						"settings":
@@ -391,38 +307,127 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": -0.0,
-						"translation.y": 0.0,
+						"translation.y": 1665.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "lab1/wejscie",
+					"buffer": 4,
+					"file": "lab1/src/FacePart.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 534,
+						"buffer_size": 476,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								209,
-								209
+								142,
+								142
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 45.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "lab1/src/Oko.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1057,
+								1057
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "lab1/src/Usta.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1252,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1235,
+								1235
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 2.0,
+						"translation.y": 405.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "lab1/inc/FacePart.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1268,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								339,
+								339
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

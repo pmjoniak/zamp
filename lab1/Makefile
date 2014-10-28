@@ -20,14 +20,17 @@ __start__: obj ./${APP}
 obj:
 	mkdir -p obj
 
-./${APP}: obj/main.o obj/main.o obj/Wektor2D.o obj/lacze_do_gnuplota.o obj/FacePart.o obj/Oko.o obj/Usta.o
-	g++ -o ./${APP} obj/main.o obj/Wektor2D.o obj/lacze_do_gnuplota.o obj/FacePart.o obj/Oko.o obj/Usta.o
+./${APP}: obj/main.o obj/main.o obj/Wektor2D.o obj/lacze_do_gnuplota.o obj/FacePart.o obj/Oko.o obj/Usta.o obj/ProgramExecutor.o
+	g++ -o ./${APP} obj/main.o obj/Wektor2D.o obj/lacze_do_gnuplota.o obj/FacePart.o obj/Oko.o obj/Usta.o obj/ProgramExecutor.o
 
-obj/main.o: src/main.cpp inc/lacze_do_gnuplota.hh inc/Wektor2D.hh inc/FacePart.h inc/Oko.hh inc/Usta.hh
+obj/main.o: src/main.cpp inc/ProgramExecutor.hh
 	g++ ${CPPFLAGS} -c -o obj/main.o src/main.cpp
 
 obj/Wektor2D.o: src/Wektor2D.cpp inc/Wektor2D.hh 
 	g++ ${CPPFLAGS} -c -o obj/Wektor2D.o src/Wektor2D.cpp
+
+obj/ProgramExecutor.o: src/ProgramExecutor.cpp inc/lacze_do_gnuplota.hh inc/Wektor2D.hh inc/FacePart.h inc/Oko.hh inc/Usta.hh inc/ProgramExecutor.hh 
+	g++ ${CPPFLAGS} -c -o obj/ProgramExecutor.o src/ProgramExecutor.cpp
 
 obj/Oko.o: src/Oko.cpp inc/Oko.hh
 	g++ ${CPPFLAGS} -c -o obj/Oko.o src/Oko.cpp	

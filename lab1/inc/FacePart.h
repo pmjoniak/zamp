@@ -14,9 +14,9 @@
 class FacePart
 {
 protected:
+   PzG::LaczeDoGNUPlota&  lacze;
+   std::string file;
 	int cx, cy;
-	PzG::LaczeDoGNUPlota&  lacze;
-	std::string file;
 
 public:
 	     /*!

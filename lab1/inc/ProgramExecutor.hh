@@ -4,7 +4,10 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
-
+#include "lacze_do_gnuplota.hh"
+#include "Usta.hh"
+#include "Oko.hh"
+#include <memory>
 
   /*!
    * \brief Klasa wykonująca program z pliku 
@@ -14,10 +17,10 @@
 class ProgramExecutor
 {
 
-private
+private:
 	PzG::LaczeDoGNUPlota  lacze;
-	vector<shared_ptr<Oko>> oka;
-	shared_ptr<Usta> usta;
+	std::vector<std::shared_ptr<Oko>> oka;
+	std::shared_ptr<Usta> usta;
 
 public:
 
@@ -29,7 +32,7 @@ public:
 	/*!
       * Niszczy obiekt.
       */
-	virtual ~ProgramExecuter();
+	virtual ~ProgramExecutor();
 
 
 	/*!

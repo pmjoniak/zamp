@@ -1,4 +1,4 @@
-#inlclude "ProgramExecutor.hh"
+#include "ProgramExecutor.hh"
 #include <vector>
 #include <iostream>
 #include <sstream>
@@ -6,6 +6,8 @@
 #include <string>
 #include <iomanip>
 #include <fstream>
+#include <chrono>
+#include <thread>
 
 using namespace std;
 
@@ -13,12 +15,12 @@ using namespace std;
 
 
 
-ProgramExecuter::ProgramExecuter()
+ProgramExecutor::ProgramExecutor()
 {
 
 }
 
-void ProgramExecuter::init()
+void ProgramExecutor::init()
 {
 	lacze.DodajNazwePliku("usta.dat",PzG::RR_Ciagly,6);
 	lacze.DodajNazwePliku("oko0.dat",PzG::RR_Ciagly,6);
@@ -41,12 +43,12 @@ void ProgramExecuter::init()
 }
 
 
-ProgramExecuter::~ProgramExecuter()
+ProgramExecutor::~ProgramExecutor()
 {
 }
 
 
-bool ProgramExecuter::execPreprocesor(const char* fileName, istringstream &iSStream)
+bool ProgramExecutor::execPreprocesor(const char* fileName, istringstream &iSStream)
 {
 	string cmdForPreproc = "cpp -P ";
 	char line[LINE_SIZE];
@@ -64,7 +66,7 @@ bool ProgramExecuter::execPreprocesor(const char* fileName, istringstream &iSStr
 
 
 
-bool ProgramExecuter::Animuj_Oko(istringstream& i_stream)
+bool ProgramExecutor::Animuj_Oko(istringstream& i_stream)
 {
 	int id, up, down, v;
 	char c;
@@ -79,7 +81,7 @@ bool ProgramExecuter::Animuj_Oko(istringstream& i_stream)
 	return true;
 }
 
-bool ProgramExecuter::Animuj_Usta(istringstream& i_stream)
+bool ProgramExecutor::Animuj_Usta(istringstream& i_stream)
 {
 	int side, up, down, v;
 	char c;
@@ -94,7 +96,7 @@ bool ProgramExecuter::Animuj_Usta(istringstream& i_stream)
 	return true;
 }
 
-bool ProgramExecuter::Animuj_Pauza(istringstream& i_stream)
+bool ProgramExecutor::Animuj_Pauza(istringstream& i_stream)
 {
 	int usec;
 	char c;
@@ -118,7 +120,7 @@ if (!Animuj_##CmdName(i_stream)) return false; \
 continue ; \
 }
 
-bool ProgramExecuter::execute(istringstream& i_stream)
+bool ProgramExecutor::execute(istringstream& i_stream)
 {
 	init();
 	string Keyword;
@@ -132,12 +134,15 @@ bool ProgramExecuter::execute(istringstream& i_stream)
 	return true;
 }
 
-bool ProgramExecuter::execute(string fileName)
+bool ProgramExecutor::execute(string fileName)
 {
 	istringstream i_stream;
 	if(execPreprocesor(fileName.c_str(), i_stream))
 		return execute(i_stream);
 	else
+	{
 		cout << "Blad pliku\n";
+		return false;
+	}
 }
 

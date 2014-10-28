@@ -46,7 +46,7 @@ int main()
 			std::cout << "Wybor: ";
 			std::cin >> choosen;
 			if(cin.fail()) {choosen = -1; cin.clear(); cin.ignore(1000, '\n');}
-			if(choosen < 0 || choosen >= options.size())
+			if(choosen < 0 || choosen >= (int)options.size())
 				std::cout << "Nie...\n";
 			else
 				done = true;
@@ -54,7 +54,7 @@ int main()
 
 		if(choosen == 0)
 			processFile();
-		else if choosen == 1)
+		else if (choosen == 1)
 			listOptions();
 		else if(choosen == 2)
 			program_end = true;

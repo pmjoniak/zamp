@@ -47,12 +47,13 @@ bool Usta::save(int up, int down, int side)
 	if (!out.is_open()) return false;
 
 
-	vector<Wektor2D>  GornaWarga = { {-20-side,0}, {-5,up}, {0,up-5}, {5,up}, {20+side,0} };
-	vector<Wektor2D>  DolnaWarga = { {-20-side,0}, {0,down}, {20+side,0} };
+	vector<Wektor2D>  GornaWarga = { {-20-(double)side,0}, {-5,(double)up}, {0,(double)up-5}, {5,(double)up}, {20+(double)side,0} };
+	vector<Wektor2D>  DolnaWarga = { {-20-(double)side,0}, {0,(double)down}, {20+(double)side,0} };
 
 
 	if (!saveFile(GornaWarga,out)) return false;
 	out << endl;
 	if (!saveFile(DolnaWarga,out)) return false;
+	out.close();
 	return true;
 }

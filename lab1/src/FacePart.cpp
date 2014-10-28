@@ -2,7 +2,7 @@
 
 using namespace std;
 
-FacePart::FacePart(PzG::LaczeDoGNUPlota&  lacze, std::string file, int cx, int cy):lacze(lacze), file(file), cx(cx), cy(cy)
+FacePart::FacePart(PzG::LaczeDoGNUPlota&  lacze, std::string file, int cx, int cy):lacze(lacze), file(file),  cx(cx), cy(cy)
 {
 
 }

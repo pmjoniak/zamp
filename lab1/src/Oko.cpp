@@ -44,12 +44,13 @@ bool Oko::save(int up, int down)
 
 	if (!out.is_open()) return false;
 
-	vector<Wektor2D>  GornaPowieka = { {-12,0}, {-5,up}, {5,up}, {12,0} };
-	vector<Wektor2D>  DolnaPowieka = { {-12,0}, {-5,down}, {5,down}, {12,0} };
+	vector<Wektor2D>  GornaPowieka = { {-12,0}, {-5,(double)up}, {5,(double)up}, {12,0} };
+	vector<Wektor2D>  DolnaPowieka = { {-12,0}, {-5,(double)down}, {5,(double)down}, {12,0} };
 
 
 	if (!saveFile(GornaPowieka,out)) return false;
 	out << endl;
 	if (!saveFile(DolnaPowieka,out)) return false;
+	out.close();
 	return true;
 }

@@ -58,7 +58,7 @@ Command* CreateCmd()
 /*!
  *
  */
-Command4Eye::Command4Eye(): up(0), down(0), id(-1), side(0)
+Command4Eye::Command4Eye(): up(0), down(0), id(-1), speed(0)
 {
 
 }
@@ -99,22 +99,22 @@ int Command4Eye::ExecCmd(RobotFace &RobPose) const
   RobPose.lacze.DodajNazwePliku("Oko1.dat",PzG::RR_Ciagly,6);
   RobPose.lacze.DodajNazwePliku("Usta.dat",PzG::RR_Ciagly,6);
   
-  int old_up = RobotFace.eye_up[id];
-  int old_down = RoboFace.eye_down[id];
+  int old_up = RobPose.eye_up[id];
+  int old_down = RobPose.eye_down[id];
 
   for(int i = 0; i < 10; i++)
   {
-    Zapisz(id, 
-      upd_up + (up - old_up) * (i+1) / 10.0,
+    Save(id, 
+      old_up + (up - old_up) * (i+1) / 10.0,
       old_down + (down - old_down) * (i+1) / 10.0, 
       RobPose);
     RobPose.lacze.Rysuj();
-    std::chrono::milliseconds duration((int)((1000.0f*100.0f/_Speed)/10.0f));
+    std::chrono::milliseconds duration((int)((1000.0f*100.0f/speed)/10.0f));
     std::this_thread::sleep_for(duration);
   }
 
-  RobotFace.eye_up[id] = up;
-  RoboFace.eye_down[id] = down;
+  RobPose.eye_up[id] = up;
+  RobPose.eye_down[id] = down;
 
 }
 
@@ -127,13 +127,13 @@ bool Command4Eye::Save(int id, int up, int down, RobotFace &pRobFace) const
   if (!out.is_open()) return false;
 
 
-  vector<Wektor2D>  GornaPowieka = { {-12,0}, {-5,(double)gora}, {5,(double)gora}, {12,0} };
-  vector<Wektor2D>  DolnaPowieka = { {-12,0}, {-5,(double)dol}, {5,(double)dol}, {12,0} };
+  vector<Wektor2D>  GornaPowieka = { {-12,0}, {-5,(double)up}, {5,(double)up}, {12,0} };
+  vector<Wektor2D>  DolnaPowieka = { {-12,0}, {-5,(double)down}, {5,(double)down}, {12,0} };
 
 
-  if (!ZapiszPlik(GornaPowieka,out, pRobFace.eye_cx[id], pRobFace.eye_cy[id]) return false;
+  if (!SaveFile(GornaPowieka,out, pRobFace.eye_cx[id], pRobFace.eye_cy[id])) return false;
   out << endl;
-  if (!ZapiszPlik(DolnaPowieka,out, pRobFace.eye_cx[id], pRobFace.eye_cy[id]) return false;
+  if (!SaveFile(DolnaPowieka,out, pRobFace.eye_cx[id], pRobFace.eye_cy[id])) return false;
   out.close();
   return true;
 }

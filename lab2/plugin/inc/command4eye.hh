@@ -40,8 +40,7 @@ class Command4Eye: public Command {
    *  do przechowywania wartości parametrów danego polecenia.
    *  Ponieżej zdefiniowane jest tylko jedno pole jako przykład.
    */
-  int up, down, id
-  int speed;
+  int up, down, id, speed;
 
  public:
   /*!
@@ -54,7 +53,7 @@ class Command4Eye: public Command {
 
    bool Save(int id, int up, int down, RobotFace &pRobFace) const;
 
-   bool SaveFile(const std::vector<Wektor2D>& points, ostream&  out, int cx, int cy) const;
+   bool SaveFile(const std::vector<Wektor2D>& points, std::ostream&  out, int cx, int cy) const;
 
   virtual void PrintCmd() const;
   /*!

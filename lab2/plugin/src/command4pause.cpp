@@ -57,7 +57,7 @@ Command* CreateCmd()
 /*!
  *
  */
-Command4Pause::Command4Pause(): _Czas()
+Command4Pause::Command4Pause(): time_us(0)
 {
 
 }
@@ -81,7 +81,7 @@ void Command4Pause::PrintCmd() const
   /*
    *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
    */
-  cout << GetCmdName() << " " << _Czas << endl;
+  cout << GetCmdName() << " " << time_us << endl;
 }
 
 
@@ -91,7 +91,7 @@ void Command4Pause::PrintCmd() const
 int Command4Pause::ExecCmd(RobotFace &RobPose) const
 {
  
-    std::chrono::milliseconds duration((int)(_Czas/1000));
+    std::chrono::milliseconds duration((int)(time_us/1000));
     std::this_thread::sleep_for(duration);
   
   return 0;
@@ -110,7 +110,7 @@ bool Command4Pause::ReadParams(std::istream& Strm_CmdsList)
    */
 
    char c;
-   Strm_CmdsList >> _Czas >> c;
+   Strm_CmdsList >> time_us >> c;
    if(Strm_CmdsList.fail())
    {
     return false;

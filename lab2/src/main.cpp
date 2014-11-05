@@ -12,6 +12,7 @@
 #include <string>
 #include <chrono>
 #include <thread>
+#include "set4libinterfaces.hh"
 
 using std::cout;
 using std::cerr;
@@ -21,78 +22,23 @@ using namespace std;
 
 #define LINE_SIZE 455
 
-struct Biblioteka
-{
-  Command *(*pCreateCmd_Fly)(void);
-  void (*pPrintSyntax_Fly)(void);
-  const char* (*pGetCmdName_Fly)(void);
-};
-
-vector<Biblioteka> biblioteki;
-vector<Command*> komendy;
-
-Command * ZnajdzKomende(string nazwaKomendy)
-{
-  for(auto& biblioteka : biblioteki)
-  {
-    if(biblioteka.pGetCmdName_Fly() == nazwaKomendy)
-      return biblioteka.pCreateCmd_Fly();
-  }
-  cout << "Nieznana komenda." << nazwaKomendy << "\n";
-  return nullptr;
-}
-
-int wczytaj_Biblioteke(char* nazwa)
-{
-
-  void *pFun;
-  Biblioteka lib;
-  void *pLibHnd_Fly = dlopen(nazwa,RTLD_LAZY);
 
 
-  if (!pLibHnd_Fly) {
-    cerr << "!!! Brak biblioteki: " << nazwa << endl;
-    return 1;
-  }
 
 
-  pFun = dlsym(pLibHnd_Fly,"CreateCmd");
-  if (!pFun) {
-    cerr << dlerror() << endl;
-    return 1;
-  }
-  lib.pCreateCmd_Fly = *reinterpret_cast<Command* (**)(void)>(&pFun);
-
-
-  pFun = dlsym(pLibHnd_Fly,"PrintSyntax"); 
-  if (!pFun) {
-    cerr << dlerror() << endl;
-    return 1;
-  }
-  lib.pPrintSyntax_Fly = *reinterpret_cast<void (**)()>(&pFun);
-
-
-  pFun = dlsym(pLibHnd_Fly,"GetCmdName"); 
-  if (!pFun) {
-    cerr << dlerror() << endl;
-    return 1;
-  }
-  lib.pGetCmdName_Fly = *reinterpret_cast<const char* (**)()>(&pFun);
-
-  biblioteki.push_back(lib);
-}
-
-
-class Glowna
+class ProgramExecuter
 {
 
 private:
+  Set4LibInterfaces&  LibsSet;
   PzG::LaczeDoGNUPlota  Lacze;
   RobotFace robot_face;
+  vector<Command*> commands;
+
 
 public:
 
-  Glowna(): robot_face(Lacze)
+  ProgramExecuter(Set4LibInterfaces&  LibsSet):LibsSet(LibsSet), robot_face(Lacze)
   {
     Lacze.DodajNazwePliku("Oko0.dat",PzG::RR_Ciagly,6);
     Lacze.DodajNazwePliku("Oko1.dat",PzG::RR_Ciagly,6);
@@ -131,18 +77,22 @@ public:
     while (i_stream >> Keyword) 
     {
       //cout << "Wczytano " << Keyword << "\n";
-      auto komenda = ZnajdzKomende(Keyword);
-      if(komenda)
+      auto lib  = LibsSet.FindLib4Cmd(Keyword.c_str());
+      if(lib)
       {
-        komenda->ReadParams(i_stream);
-        komenda->PrintCmd();
-        komendy.push_back(komenda);
+        auto command = lib->CreateCmd();
+        if(command)
+        {
+          command->ReadParams(i_stream);
+          //command->PrintCmd();
+          commands.push_back(command);
+        }
       }
     }
 
-    for(auto& komenda : komendy)
+    for(auto& command : commands)
     {
-      komenda->ExecCmd(robot_face);
+      command->ExecCmd(robot_face);
     }
     return true;
   }
@@ -160,9 +110,12 @@ public:
 
 int main()
 {
-  wczytaj_Biblioteke("libPolecenie_Oko.so");
-  wczytaj_Biblioteke("libPolecenie_Usta.so");
-  wczytaj_Biblioteke("libPolecenie_Pauza.so");
-  Glowna glowna;
-  glowna.execute("wejscie.cmd");
+  Set4LibInterfaces  LibsSet;
+
+  if (!LibsSet.AddLib("libPolecenie_Oko.so")) return 1;
+  if (!LibsSet.AddLib("libPolecenie_Usta.so")) return 1;
+  if (!LibsSet.AddLib("libPolecenie_Pauza.so")) return 1;
+
+  ProgramExecuter executer(LibsSet);
+  executer.execute("wejscie.cmd");
 }

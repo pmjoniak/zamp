@@ -53,7 +53,7 @@ class Command4Mouth: public Command {
 
   bool Save(int side, int up, int down, RobotFace &pRobFace) const;
 
-  bool SaveFile(const std::vector<Wektor2D>& points, ostream&  out, int cx, int cy) const;
+  bool SaveFile(const std::vector<Wektor2D>& points, std::ostream&  out, int cx, int cy) const;
 
   virtual void PrintCmd() const;
   /*!

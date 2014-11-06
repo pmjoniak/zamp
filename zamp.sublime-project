@@ -1,2 +1,12 @@
 {
+<<<<<<< HEAD
+=======
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "lab2"
+		}
+	]
+>>>>>>> 3ab3a0f663c3be6a638f0157b54eb4d26d64ec17
 }

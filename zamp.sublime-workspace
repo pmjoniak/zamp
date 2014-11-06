@@ -4,6 +4,98 @@
 		"selected_items":
 		[
 			[
+				"Lib",
+				"LibsSet"
+			],
+			[
+				"Save",
+				"SaveFile"
+			],
+			[
+				"sta",
+				"stary_kacik"
+			],
+			[
+				"usta_",
+				"usta_kacik"
+			],
+			[
+				"stary_",
+				"stary_kacik"
+			],
+			[
+				"stary",
+				"stary_kacik"
+			],
+			[
+				"lin",
+				"libPolecenie_Usta"
+			],
+			[
+				"Fac",
+				"robot_face"
+			],
+			[
+				"peni",
+				"penisy"
+			],
+			[
+				"biblio",
+				"biblioteki"
+			],
+			[
+				"pC",
+				"pCreateCmd_Fly"
+			],
+			[
+				"nazw",
+				"nazwaPenisa"
+			],
+			[
+				"bibli",
+				"bibliotekaKurwa"
+			],
+			[
+				"bibl",
+				"biblioteki"
+			],
+			[
+				"bibi",
+				"bibliotekaKurwa"
+			],
+			[
+				"bi",
+				"bibliotekaKurwa"
+			],
+			[
+				"robot",
+				"robot_face"
+			],
+			[
+				"st",
+				"stary_dol"
+			],
+			[
+				"ro",
+				"pRobFace"
+			],
+			[
+				"_",
+				"_Gora"
+			],
+			[
+				"stara",
+				"stara_gora"
+			],
+			[
+				"S",
+				"_Speed"
+			],
+			[
+				"int",
+				"int"
+			],
+			[
 				"progra",
 				"program_end"
 			],
@@ -40,6 +132,7 @@
 	"buffers":
 	[
 		{
+<<<<<<< HEAD
 			"file": "/C/Users/Admin/Documents/GitHub/voxelizer_beta/libs/ziplib/Source/Sample/Main.cpp",
 			"settings":
 			{
@@ -54,6 +147,53 @@
 				"buffer_size": 5407,
 				"line_ending": "Windows",
 				"name": "Windows PowerShell"
+=======
+			"file": "lab2/src/libinterface.cpp",
+			"settings":
+			{
+				"buffer_size": 1098,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab2/inc/set4libinterfaces.hh",
+			"settings":
+			{
+				"buffer_size": 822,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab2/src/main.cpp",
+			"settings":
+			{
+				"buffer_size": 2436,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab2/src/set4libinterfaces.cpp",
+			"settings":
+			{
+				"buffer_size": 1667,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab2/inc/libinterface.hh",
+			"settings":
+			{
+				"buffer_size": 2068,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab2/Makefile",
+			"settings":
+			{
+				"buffer_size": 1113,
+				"line_ending": "Unix"
+>>>>>>> 3ab3a0f663c3be6a638f0157b54eb4d26d64ec17
 			}
 		}
 	],
@@ -86,6 +226,7 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+<<<<<<< HEAD
 	"file_history":
 	[
 		"/C/Users/Admin/Desktop/shape/sphere.svx",
@@ -119,11 +260,69 @@
 		"/C/Users/Admin/Documents/GitHub/zamp/lab1/inc/FacePart.h",
 		"/C/Users/Admin/Documents/GitHub/zamp/lab1/src/Oko.cpp",
 		"/home/pawel/Desktop/Git/zamp/lab1/src/lacze_do_gnuplota.cpp",
+=======
+	"expanded_folders":
+	[
+		"/home/pawel/Desktop/Git/zamp/lab2",
+		"/home/pawel/Desktop/Git/zamp/lab2/inc",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin/obj",
+		"/home/pawel/Desktop/Git/zamp/lab2/src"
+	],
+	"file_history":
+	[
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/map-interface-wskaznik/src/main.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab2/inc/robotface.hh",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin/inc/command4pause.hh",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin/inc/command4mouth.hh",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin/src/command4pause.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin/src/command4mouth.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab2/src/robotface.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin/src/command4eye.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab2/Makefile",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin/inc/command4eye.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/src/command4eye.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab1/src/Usta.cpp",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/src/main.cpp",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/inc/robotface.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/Makefile",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/src/command4mouth.cpp",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/inc/command4mouth.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/Oko1.dat",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/inc/command4eye.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/inc/command4pause.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/src/command4pause.cpp",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/inc/lacze_do_gnuplota.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/src/lacze_do_gnuplota.cpp",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/Makefile",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/Oko0.dat",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/wejscie.cmd",
+		"/home/pawel/Desktop/Git/zamp/lab1/src/Oko.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab1/Makefile",
+		"/home/pawel/Desktop/zad12_marek/branches/Makefile",
+>>>>>>> 3ab3a0f663c3be6a638f0157b54eb4d26d64ec17
 		"/home/pawel/Desktop/Git/zamp/lab1/src/FacePart.cpp",
+		"/home/pawel/Desktop/zad12_marek/branches/src/main.cpp",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/src/wejscie.cmd",
+		"/home/pawel/Desktop/zad12_marek/branches/plik_z_komendami.cmd",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/map-interface-wskaznik/src/main.cpp~",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/inc/command.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/map-interface-wskaznik/src/set4libinterfaces.cpp",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/map-interface-wskaznik/src/libinterface.cpp",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/map-interface-wskaznik/inc/set4libinterfaces.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/map-interface-wskaznik/inc/scene.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/map-interface-wskaznik/inc/libinterface.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/map-interface-wskaznik/czytaj.to",
 		"/home/pawel/Desktop/Git/zamp/lab1/inc/FacePart.h",
+		"/home/pawel/Desktop/Git/zamp/lab1/src/ProgramExecutor.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab1/inc/ProgramExecutor.hh",
 		"/home/pawel/Desktop/Git/zamp/lab1/src/main.cpp",
-		"/home/pawel/Desktop/zad1/src/main.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab1/inc/Oko.hh",
 		"/home/pawel/Desktop/Git/zamp/lab1/inc/lacze_do_gnuplota.hh",
+		"/home/pawel/Desktop/Git/zamp/lab1/inc/Usta.hh",
+		"/home/pawel/Desktop/Git/zamp/lab1/wejscie",
+		"/home/pawel/Desktop/Git/zamp/lab1/src/lacze_do_gnuplota.cpp",
+		"/home/pawel/Desktop/zad1/src/main.cpp",
 		"/media/pawel/MYLINUXLIVE/lab1/src/main.cpp",
 		"/home/pawel/Desktop/Git/zamp/lab1/src/plik",
 		"/media/usb0/Ubuntu-29.09.2014/catkin_ws/src/czlapacz1/src/talker.cpp",
@@ -147,6 +346,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+<<<<<<< HEAD
 			"\\sin \\left(\\theta _2\\right)",
 			"\\cos \\left(\\theta _2\\right)",
 			"\\sin \\left(\\theta _1\\right)",
@@ -156,6 +356,32 @@
 			"createE",
 			"getEn",
 			"\n	",
+=======
+			"nazwa",
+			"pLibHnd_Fly",
+			"commend",
+			"fun_PrintSyntax",
+			"_pFun_GetCmdName",
+			"_pLibHandle",
+			"penis",
+			"eye",
+			"wczytaj_libBiaacz",
+			"nazwaPenisa",
+			"ZNajdzKomende",
+			"ZnajdzPenis",
+			"penis",
+			"penisy",
+			"BibliotekaKurwa",
+			"_InfoPl",
+			"return",
+			"DopiszRys",
+			"rYSUJ",
+			"pRZESLI",
+			"rYSUJ",
+			"down",
+			"up",
+			"gora",
+>>>>>>> 3ab3a0f663c3be6a638f0157b54eb4d26d64ec17
 			"lacze",
 			"processFile"
 		],
@@ -165,12 +391,29 @@
 		"regex": true,
 		"replace_history":
 		[
+<<<<<<< HEAD
 			"s_{\\theta_2}",
 			"c_{\\theta_2}",
 			"s_{\\theta_1}",
 			"c_{\\theta_1}",
 			"s_{\\theta_0}",
 			"c_{\\theta_0}"
+=======
+			"name",
+			"lib_handle",
+			"command",
+			"fun_GetCmdName",
+			"lib_handle",
+			"komenda",
+			"wczytaj_Biblioteke",
+			"nazwaKomendy",
+			"ZnajdzKomende",
+			"ZNajdzKomende",
+			"komendy",
+			"Biblioteka",
+			"dol",
+			"gora"
+>>>>>>> 3ab3a0f663c3be6a638f0157b54eb4d26d64ec17
 		],
 		"reverse": false,
 		"show_context": true,
@@ -181,28 +424,42 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+<<<<<<< HEAD
 					"file": "/C/Users/Admin/Documents/GitHub/voxelizer_beta/libs/ziplib/Source/Sample/Main.cpp",
 					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 6607,
+=======
+					"file": "lab2/src/libinterface.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1098,
+>>>>>>> 3ab3a0f663c3be6a638f0157b54eb4d26d64ec17
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								4473,
 								4297
+=======
+								1098,
+								1098
+>>>>>>> 3ab3a0f663c3be6a638f0157b54eb4d26d64ec17
 							]
 						],
 						"settings":
 						{
+<<<<<<< HEAD
 							"syntax": "Packages/C++/C++.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -218,14 +475,99 @@
 					"settings":
 					{
 						"buffer_size": 5407,
+=======
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 221.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lab2/inc/set4libinterfaces.hh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 822,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 183.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lab2/src/main.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2436,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1378,
+								1378
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1350.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lab2/src/set4libinterfaces.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1667,
+>>>>>>> 3ab3a0f663c3be6a638f0157b54eb4d26d64ec17
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+<<<<<<< HEAD
 								5246,
 								5310
+=======
+								873,
+								873
+>>>>>>> 3ab3a0f663c3be6a638f0157b54eb4d26d64ec17
 							]
 						],
 						"settings":
@@ -235,11 +577,77 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
+<<<<<<< HEAD
 						"translation.x": 0.0,
 						"translation.y": 1058.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+=======
+						"translation.x": -0.0,
+						"translation.y": 16.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "lab2/inc/libinterface.hh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2068,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								99,
+								99
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "lab2/Makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								462,
+								462
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.tmLanguage"
+						},
+						"translation.x": 315.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+>>>>>>> 3ab3a0f663c3be6a638f0157b54eb4d26d64ec17
 					"type": "text"
 				}
 			]
@@ -247,7 +655,11 @@
 	],
 	"incremental_find":
 	{
+<<<<<<< HEAD
 		"height": 46.0
+=======
+		"height": 26.0
+>>>>>>> 3ab3a0f663c3be6a638f0157b54eb4d26d64ec17
 	},
 	"input":
 	{
@@ -276,6 +688,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 142.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -291,6 +707,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"4eye",
+				"plugin/inc/command4eye.hh"
+			],
+			[
+				"rob",
+				"inc/robotface.hh"
+			]
 		],
 		"width": 0.0
 	},
@@ -318,7 +742,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 176.0,
+	"side_bar_width": 241.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

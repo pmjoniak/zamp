@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"Lib",
+				"LibsSet"
+			],
+			[
+				"Save",
+				"SaveFile"
+			],
+			[
+				"sta",
+				"stary_kacik"
+			],
+			[
+				"usta_",
+				"usta_kacik"
+			],
+			[
+				"stary_",
+				"stary_kacik"
+			],
+			[
+				"stary",
+				"stary_kacik"
+			],
+			[
+				"lin",
+				"libPolecenie_Usta"
+			],
+			[
 				"Fac",
 				"robot_face"
 			],
@@ -60,10 +88,6 @@
 				"stara_gora"
 			],
 			[
-				"stary_",
-				"stary_dol"
-			],
-			[
 				"S",
 				"_Speed"
 			],
@@ -108,50 +132,50 @@
 	"buffers":
 	[
 		{
-			"file": "/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/src/main.cpp",
+			"file": "lab2/src/libinterface.cpp",
 			"settings":
 			{
-				"buffer_size": 3268,
+				"buffer_size": 1098,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/Makefile",
+			"file": "lab2/inc/set4libinterfaces.hh",
 			"settings":
 			{
-				"buffer_size": 594,
+				"buffer_size": 822,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/src/lacze_do_gnuplota.cpp",
+			"file": "lab2/src/main.cpp",
 			"settings":
 			{
-				"buffer_size": 12971,
+				"buffer_size": 2436,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/inc/lacze_do_gnuplota.hh",
+			"file": "lab2/src/set4libinterfaces.cpp",
 			"settings":
 			{
-				"buffer_size": 23532,
+				"buffer_size": 1667,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/src/command4eye.cpp",
+			"file": "lab2/inc/libinterface.hh",
 			"settings":
 			{
-				"buffer_size": 3900,
+				"buffer_size": 2068,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/Makefile",
+			"file": "lab2/Makefile",
 			"settings":
 			{
-				"buffer_size": 1423,
+				"buffer_size": 1113,
 				"line_ending": "Unix"
 			}
 		}
@@ -187,30 +211,40 @@
 	},
 	"expanded_folders":
 	[
-		"/home/pawel/Desktop/zad2",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/inc",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/inc",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/obj",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/src",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/src"
+		"/home/pawel/Desktop/Git/zamp/lab2",
+		"/home/pawel/Desktop/Git/zamp/lab2/inc",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin/obj",
+		"/home/pawel/Desktop/Git/zamp/lab2/src"
 	],
 	"file_history":
 	[
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/map-interface-wskaznik/src/main.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab2/inc/robotface.hh",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin/inc/command4pause.hh",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin/inc/command4mouth.hh",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin/src/command4pause.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin/src/command4mouth.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab2/src/robotface.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin/src/command4eye.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab2/Makefile",
+		"/home/pawel/Desktop/Git/zamp/lab2/plugin/inc/command4eye.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/src/command4eye.cpp",
+		"/home/pawel/Desktop/Git/zamp/lab1/src/Usta.cpp",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/src/main.cpp",
 		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/inc/robotface.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/Makefile",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/src/command4mouth.cpp",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/inc/command4mouth.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/Oko1.dat",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/inc/command4eye.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/inc/command4pause.hh",
+		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/src/command4pause.cpp",
 		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/inc/lacze_do_gnuplota.hh",
 		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/src/lacze_do_gnuplota.cpp",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/inc/command4eye.hh",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/src/command4eye.cpp",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/src/command4mouth.cpp",
 		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/Makefile",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/Oko1.dat",
 		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/Oko0.dat",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/Makefile",
 		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/wejscie.cmd",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/src/main.cpp",
 		"/home/pawel/Desktop/Git/zamp/lab1/src/Oko.cpp",
 		"/home/pawel/Desktop/Git/zamp/lab1/Makefile",
 		"/home/pawel/Desktop/zad12_marek/branches/Makefile",
@@ -218,7 +252,6 @@
 		"/home/pawel/Desktop/zad12_marek/branches/src/main.cpp",
 		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/src/wejscie.cmd",
 		"/home/pawel/Desktop/zad12_marek/branches/plik_z_komendami.cmd",
-		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/map-interface-wskaznik/src/main.cpp",
 		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/map-interface-wskaznik/src/main.cpp~",
 		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/inc/command.hh",
 		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/map-interface-wskaznik/src/set4libinterfaces.cpp",
@@ -228,7 +261,6 @@
 		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/map-interface-wskaznik/inc/libinterface.hh",
 		"/home/pawel/Desktop/zad2/biblioteki_dynamiczne/map-interface-wskaznik/czytaj.to",
 		"/home/pawel/Desktop/Git/zamp/lab1/inc/FacePart.h",
-		"/home/pawel/Desktop/Git/zamp/lab1/src/Usta.cpp",
 		"/home/pawel/Desktop/Git/zamp/lab1/src/ProgramExecutor.cpp",
 		"/home/pawel/Desktop/Git/zamp/lab1/inc/ProgramExecutor.hh",
 		"/home/pawel/Desktop/Git/zamp/lab1/src/main.cpp",
@@ -261,6 +293,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"nazwa",
+			"pLibHnd_Fly",
+			"commend",
+			"fun_PrintSyntax",
+			"_pFun_GetCmdName",
+			"_pLibHandle",
+			"penis",
+			"eye",
+			"wczytaj_libBiaacz",
+			"nazwaPenisa",
+			"ZNajdzKomende",
+			"ZnajdzPenis",
+			"penis",
+			"penisy",
+			"BibliotekaKurwa",
 			"_InfoPl",
 			"return",
 			"DopiszRys",
@@ -279,6 +326,18 @@
 		"regex": false,
 		"replace_history":
 		[
+			"name",
+			"lib_handle",
+			"command",
+			"fun_GetCmdName",
+			"lib_handle",
+			"komenda",
+			"wczytaj_Biblioteke",
+			"nazwaKomendy",
+			"ZnajdzKomende",
+			"ZNajdzKomende",
+			"komendy",
+			"Biblioteka",
 			"dol",
 			"gora"
 		],
@@ -296,19 +355,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/src/main.cpp",
+					"file": "lab2/src/libinterface.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3268,
+						"buffer_size": 1098,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1919,
-								1919
+								1098,
+								1098
 							]
 						],
 						"settings":
@@ -318,85 +377,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1566.0,
+						"translation.y": 221.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/Makefile",
+					"file": "lab2/inc/set4libinterfaces.hh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 594,
+						"buffer_size": 822,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								180,
-								180
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Makefile/Makefile.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/src/lacze_do_gnuplota.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12971,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2547,
-								2554
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1689.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/inc/lacze_do_gnuplota.hh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 23532,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4932,
-								4932
+								0,
+								0
 							]
 						],
 						"settings":
@@ -406,27 +407,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": -0.0,
-						"translation.y": 2373.0,
+						"translation.y": 183.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/src/command4eye.cpp",
+					"buffer": 2,
+					"file": "lab2/src/main.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3900,
+						"buffer_size": 2436,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1665,
-								1665
+								1378,
+								1378
 							]
 						],
 						"settings":
@@ -436,38 +437,98 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1566.0,
+						"translation.y": 1350.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/home/pawel/Desktop/zad2/biblioteki_dynamiczne/zalazek_podstawowy/plugin/Makefile",
+					"buffer": 3,
+					"file": "lab2/src/set4libinterfaces.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1423,
+						"buffer_size": 1667,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1228,
-								1228
+								873,
+								873
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 16.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "lab2/inc/libinterface.hh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2068,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								99,
+								99
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "lab2/Makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								462,
+								462
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Makefile/Makefile.tmLanguage"
 						},
-						"translation.x": 0.0,
-						"translation.y": 324.0,
+						"translation.x": 315.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -479,7 +540,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -515,7 +576,7 @@
 	"project": "zamp.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -523,6 +584,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"4eye",
+				"plugin/inc/command4eye.hh"
+			],
+			[
+				"rob",
+				"inc/robotface.hh"
+			]
 		],
 		"width": 0.0
 	},

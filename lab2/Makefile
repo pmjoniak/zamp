@@ -10,11 +10,14 @@ __plugin__:
 CPPFLAGS=-Wall -pedantic -Iinc -std=c++11
 LDFLAGS=-Wall
 
-interp: obj/main.o obj/robotface.o plugin/obj/Wektor2D.o plugin/obj/lacze_do_gnuplota.o obj/set4libinterfaces.o obj/libinterface.o
-	g++ ${LDFLAGS} -o interp  obj/main.o plugin/obj/Wektor2D.o plugin/obj/lacze_do_gnuplota.o obj/robotface.o obj/set4libinterfaces.o obj/libinterface.o -ldl
+interp: obj/main.o obj/robotface.o plugin/obj/Wektor2D.o plugin/obj/lacze_do_gnuplota.o obj/set4libinterfaces.o obj/libinterface.o obj/GnuplotRobotFace.o
+	g++ ${LDFLAGS} -o interp  obj/main.o plugin/obj/Wektor2D.o plugin/obj/lacze_do_gnuplota.o obj/robotface.o obj/set4libinterfaces.o obj/libinterface.o obj/GnuplotRobotFace.o -ldl
 
 obj/main.o: src/main.cpp inc/command.hh inc/Wektor2D.hh inc/Wektor2D.hh
 	g++ -c ${CPPFLAGS} -o obj/main.o src/main.cpp
+
+obj/GnuplotRobotFace.o: src/GnuplotRobotFace.cpp inc/GnuplotRobotFace.hh
+	g++ -c ${CPPFLAGS} -o obj/GnuplotRobotFace.o src/GnuplotRobotFace.cpp
 
 obj/robotface.o: src/robotface.cpp inc/robotface.hh
 	g++ -c ${CPPFLAGS} -o obj/robotface.o src/robotface.cpp

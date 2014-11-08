@@ -94,61 +94,24 @@ int Command4Eye::ExecCmd(RobotFace &RobPose) const
   /*
    *  Tu trzeba napisać odpowiedni kod.
    */
-
-  RobPose.lacze.DodajNazwePliku("Oko0.dat",PzG::RR_Ciagly,6);
-  RobPose.lacze.DodajNazwePliku("Oko1.dat",PzG::RR_Ciagly,6);
-  RobPose.lacze.DodajNazwePliku("Usta.dat",PzG::RR_Ciagly,6);
   
   int old_up = RobPose.eye_up[id];
   int old_down = RobPose.eye_down[id];
 
   for(int i = 0; i < 10; i++)
   {
-    Save(id, 
-      old_up + (up - old_up) * (i+1) / 10.0,
-      old_down + (down - old_down) * (i+1) / 10.0, 
-      RobPose);
-    RobPose.lacze.Rysuj();
+    RobPose.eye_up[id] = old_up + (up - old_up) * (i+1) / 10.0;
+    RobPose.eye_down[id] = old_down + (down - old_down) * (i+1) / 10.0;
+
+    RobPose.Update();
+    //cout << RobPose.eye_up[id] << ", " << RobPose.eye_down[id] << "\n";
+
     std::chrono::milliseconds duration((int)((1000.0f*100.0f/speed)/10.0f));
     std::this_thread::sleep_for(duration);
   }
-
-  RobPose.eye_up[id] = up;
-  RobPose.eye_down[id] = down;
-
+  return 0;
 }
 
-
-
-bool Command4Eye::Save(int id, int up, int down, RobotFace &pRobFace) const
-{
-  ofstream  out((id == 0 ? "Oko0.dat" : "Oko1.dat"));
-
-  if (!out.is_open()) return false;
-
-
-  vector<Wektor2D>  GornaPowieka = { {-12,0}, {-5,(double)up}, {5,(double)up}, {12,0} };
-  vector<Wektor2D>  DolnaPowieka = { {-12,0}, {-5,(double)down}, {5,(double)down}, {12,0} };
-
-
-  if (!SaveFile(GornaPowieka,out, pRobFace.eye_cx[id], pRobFace.eye_cy[id])) return false;
-  out << endl;
-  if (!SaveFile(DolnaPowieka,out, pRobFace.eye_cx[id], pRobFace.eye_cy[id])) return false;
-  out.close();
-  return true;
-}
-
-
-bool Command4Eye::SaveFile(const vector<Wektor2D>& points, ostream&  out, int cx, int cy) const
-{
-  for (auto p : points) 
-  {
-    p.x += cx;
-    p.y += cy;
-    out << p << endl;
-  }
-  return !out.fail();
-}
 
 /*!
  *

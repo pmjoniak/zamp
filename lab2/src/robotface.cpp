@@ -1,6 +1,6 @@
 #include "robotface.hh"
 
-RobotFace::RobotFace(PzG::LaczeDoGNUPlota& lacze) : lacze(lacze)
+RobotFace::RobotFace()
 {
 	eye_up[0] = 20;
 	eye_up[1] = 20;
@@ -15,7 +15,7 @@ RobotFace::RobotFace(PzG::LaczeDoGNUPlota& lacze) : lacze(lacze)
 	
 	mouth_cx = 30;
 	mouth_cy = 0;
-	mouth_down = 20;
-	mouth_up = 20;
+	mouth_down = -60;
+	mouth_up = -40;
 	mouth_side = 20;
 }

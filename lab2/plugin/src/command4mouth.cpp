@@ -94,34 +94,20 @@ int Command4Mouth::ExecCmd(RobotFace &RobPose) const
    *  Tu trzeba napisać odpowiedni kod.
    */
 
-  RobPose.lacze.DodajNazwePliku("Oko0.dat",PzG::RR_Ciagly,6);
-  RobPose.lacze.DodajNazwePliku("Oko1.dat",PzG::RR_Ciagly,6);
-  RobPose.lacze.DodajNazwePliku("Usta.dat",PzG::RR_Ciagly,6);
-  
-
-
-
   int old_up = RobPose.mouth_up;
   int old_down = RobPose.mouth_down;
   int old_side = RobPose.mouth_side;
 
   for(int i = 0; i < 10; i++)
   {
-    Save(
-     old_side +(side - old_side) * (i+1) / 10.0,
-     old_up + (up - old_up) * (i+1) / 10.0,
-    old_down + (down - old_down) * (i+1) / 10.0, 
-      RobPose);
-    RobPose.lacze.Rysuj();
+    RobPose.mouth_side = old_side +(side - old_side) * (i+1) / 10.0;
+    RobPose.mouth_up = old_up + (up - old_up) * (i+1) / 10.0;
+    RobPose.mouth_down = old_down + (down - old_down) * (i+1) / 10.0;
+
+    RobPose.Update();
     std::chrono::milliseconds duration((int)((1000.0f*100.0f/speed)/10.0f));
     std::this_thread::sleep_for(duration);
-  }
-
-
-  RobPose.mouth_down = down;
-  RobPose.mouth_up = up;
-  RobPose.mouth_side = side;
- 
+  } 
   return 0;
 }
 
@@ -164,33 +150,3 @@ void Command4Mouth::PrintSyntax()
        << " szybkosc_zmian;" << endl;
 }
 
-
-bool Command4Mouth::Save(int side, int up, int down, RobotFace &pRobFace) const
-{
-  ofstream  out("Usta.dat");
-
-  if (!out.is_open()) return false;
-
-
-  vector<Wektor2D>  GornaWarga = { {-20-(double)side,0}, {-5,(double)up}, {0,(double)up-5}, {5,(double)up}, {20+(double)side,0} };
-  vector<Wektor2D>  DolnaWarga = { {-20-(double)side,0}, {0,(double)down}, {20+(double)side,0} };
-
-
-  if (!SaveFile(GornaWarga,out, pRobFace.mouth_cx, pRobFace.mouth_cy)) return false;
-  out << endl;
-  if (!SaveFile(DolnaWarga,out, pRobFace.mouth_cx, pRobFace.mouth_cy)) return false;
-  out.close();
-  return true;
-}
-
-
-bool Command4Mouth::SaveFile(const vector<Wektor2D>& points, ostream&  out, int cx, int cy) const
-{
-  for (auto p : points) 
-  {
-    p.x += cx;
-    p.y += cy;
-    out << p << endl;
-  }
-  return !out.fail();
-}

@@ -13,6 +13,7 @@
 #include <chrono>
 #include <thread>
 #include "set4libinterfaces.hh"
+#include "GnuplotRobotFace.hh"
 
 using std::cout;
 using std::cerr;
@@ -31,26 +32,15 @@ class ProgramExecuter
 
 private:
   Set4LibInterfaces&  LibsSet;
-  PzG::LaczeDoGNUPlota  Lacze;
-  RobotFace robot_face;
+  GnuplotRobotFace robot_face;
   vector<Command*> commands;
 
 
 public:
 
-  ProgramExecuter(Set4LibInterfaces&  LibsSet):LibsSet(LibsSet), robot_face(Lacze)
+  ProgramExecuter(Set4LibInterfaces&  LibsSet):LibsSet(LibsSet), robot_face()
   {
-    Lacze.DodajNazwePliku("Oko0.dat",PzG::RR_Ciagly,6);
-    Lacze.DodajNazwePliku("Oko1.dat",PzG::RR_Ciagly,6);
-    Lacze.DodajNazwePliku("Usta.dat",PzG::RR_Ciagly,6);
-    Lacze.Inicjalizuj();  // Tutaj startuje gnuplot.
-    Lacze.ZmienTrybRys(PzG::TR_2D);
 
-
-
-    Lacze.UstawZakresY(-100,150);
-    Lacze.UstawZakresX(-35,90);
-    Lacze.Rysuj();
 
   }
 

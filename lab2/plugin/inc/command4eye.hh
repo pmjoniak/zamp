@@ -18,8 +18,6 @@
 
 #include "command.hh"
 #include <vector>
-#include "Wektor2D.hh"
-#include "lacze_do_gnuplota.hh"
 
 /*!
  * \file
@@ -50,11 +48,6 @@ class Command4Eye: public Command {
   /*!
    * \brief
    */
-
-   bool Save(int id, int up, int down, RobotFace &pRobFace) const;
-
-   bool SaveFile(const std::vector<Wektor2D>& points, std::ostream&  out, int cx, int cy) const;
-
   virtual void PrintCmd() const;
   /*!
    * \brief

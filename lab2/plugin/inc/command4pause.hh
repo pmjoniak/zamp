@@ -17,8 +17,6 @@
 #endif
 
 #include "command.hh"
-#include "Wektor2D.hh"
-#include "lacze_do_gnuplota.hh"
 
 /*!
  * \file

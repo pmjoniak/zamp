@@ -12,7 +12,6 @@
  */
 
 #include <iostream>
- #include "lacze_do_gnuplota.hh"
 
 /*!
  * \file
@@ -38,9 +37,9 @@ struct RobotFace {
 	int mouth_up = 20;
 	int mouth_side = 20;
 
-	RobotFace(PzG::LaczeDoGNUPlota& lacze);
+	RobotFace();
 
-	PzG::LaczeDoGNUPlota& lacze;
+	virtual void Update() = 0;
 };	
 
 

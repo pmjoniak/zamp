@@ -9,9 +9,8 @@ using namespace std;
  */
 Set4LibInterfaces::~Set4LibInterfaces()
 {
-  /*
-   *  Tutaj trzeba wpisac odpowiedni kod
-   */
+  for(auto& lib : (*this))
+    delete lib.second;
 }
 
 
@@ -40,6 +39,17 @@ bool Set4LibInterfaces::AddLib(const char*  sLibName)
 }
 
 
+
+bool Set4LibInterfaces::SubLib(const char*  sCmdName)
+{
+  auto  iter = map<string,LibInterface*>::find(sCmdName);
+
+  if (iter == end()) return false;
+
+  delete iter->second;
+  this->erase(iter);
+  return true;
+}
 
 /*!
  * Szuka obiektu pełniącego rolę interfejsu biblioteki, który 

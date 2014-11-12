@@ -26,14 +26,14 @@ bool LibInterface::Init4Lib(const char* name)
 
   if (!lib_handle) {
     cerr << "!!! Brak biblioteki: " << name << endl;
-    return 1;
+    return false;
   }
 
 
   pFun = dlsym(lib_handle,"CreateCmd");
   if (!pFun) {
     cerr << dlerror() << endl;
-    return 1;
+    return false;
   }
   fun_CreateCmd = *reinterpret_cast<Command* (**)(void)>(&pFun);
 
@@ -41,7 +41,7 @@ bool LibInterface::Init4Lib(const char* name)
   pFun = dlsym(lib_handle,"PrintSyntax"); 
   if (!pFun) {
     cerr << dlerror() << endl;
-    return 1;
+    return false;
   }
   fun_PrintSyntax = *reinterpret_cast<void (**)()>(&pFun);
 
@@ -49,7 +49,7 @@ bool LibInterface::Init4Lib(const char* name)
   pFun = dlsym(lib_handle,"GetCmdName"); 
   if (!pFun) {
     cerr << dlerror() << endl;
-    return 1;
+    return false;
   }
   fun_GetCmdName = *reinterpret_cast<const char* (**)()>(&pFun);
   return true;

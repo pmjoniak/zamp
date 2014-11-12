@@ -1,11 +1,14 @@
 #include "GnuplotRobotFace.hh"
 #include <fstream>
+#include <cmath>
 
 GnuplotRobotFace::GnuplotRobotFace()
 {
 	lacze.DodajNazwePliku("Oko0.dat",PzG::RR_Ciagly,6);
     lacze.DodajNazwePliku("Oko1.dat",PzG::RR_Ciagly,6);
     lacze.DodajNazwePliku("Usta.dat",PzG::RR_Ciagly,6);
+    lacze.DodajNazwePliku("Brew0.dat",PzG::RR_Ciagly,6);
+    lacze.DodajNazwePliku("Brew1.dat",PzG::RR_Ciagly,6);
     lacze.Inicjalizuj();  // Tutaj startuje gnuplot.
     lacze.ZmienTrybRys(PzG::TR_2D);
 
@@ -20,6 +23,7 @@ void GnuplotRobotFace::Update()
 {
 	SaveMouth();
 	SaveEyes();
+	SaveEyebrows();
 	lacze.Rysuj();
 }
 
@@ -69,6 +73,24 @@ bool GnuplotRobotFace::SaveEyes()
 		out << std::endl;
 		if (!SaveFile(DolnaPowieka,out, eye_cx[id], eye_cy[id])) return false;
 		out.close();
+	}
+	return true;
+}
+
+bool GnuplotRobotFace::SaveEyebrows()
+{
+	for(int id = 0; id < 2; id++)
+	{
+		std::ofstream  out((id == 0 ? "Brew0.dat" : "Brew1.dat"));
+
+		if (!out.is_open()) return false;
+
+		float off = 20*std::tan(eyebrow_angle[id] * 3.14159265 / 180);
+		std::vector<Wektor2D>  Brew = { {-15, eyebrow_pos[id] + off}, {15, eyebrow_pos[id] - off } };
+
+
+		if (!SaveFile(Brew, out, eyebrow_cx[id], eyebrow_cy[id])) return false;
+		out << std::endl;
 	}
 	return true;
 }

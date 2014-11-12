@@ -36,6 +36,7 @@ class Set4LibInterfaces: public std::map<std::string,LibInterface*> {
     * \brief Dodaje nowa bibliotekę
     */
   bool AddLib(const char* sLibName);
+  bool SubLib(const char* sLibName);
   /*!
    * \brief Szuka interfejsu biblioteki odpowiadającej danemu poleceniu
    */

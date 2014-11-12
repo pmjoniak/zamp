@@ -13,6 +13,7 @@ private:
 private:
 	bool SaveMouth();
 	bool SaveEyes();
+	bool SaveEyebrows();
 
 public:
 	GnuplotRobotFace();

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+ <xs:complexType name="Type4Parameter">
+   <xs:sequence>
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Value" type="xs:int" />
+ </xs:complexType>
+
+ <xs:complexType name="Type4Object">
+   <xs:sequence>
+     <xs:element name="Parameter" type="Type4Parameter"
+                                    minOccurs="2" maxOccurs="3"/>
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+ </xs:complexType>
+
+
+ <xs:complexType name="Type4RobotFace">
+   <xs:sequence>
+    <xs:element name="Object" type="Type4Object" minOccurs="1" maxOccurs="unbounded" />
+   </xs:sequence>
+ </xs:complexType>
+
+ <xs:element name="RobotFace" type="Type4RobotFace">
+ </xs:element>
+
+</xs:schema>

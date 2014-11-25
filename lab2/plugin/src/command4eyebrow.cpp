@@ -82,7 +82,7 @@ void Command4Eyebrow::PrintCmd() const
   /*
    *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
    */
-  cout << GetCmdName() << " " << id<< ", " << angle<< ","<< pos << ", "<< speed  << endl;
+  cout << GetCmdName() << " " << id<< ", " << pos<< ","<< angle << ", "<< speed  << endl;
 }
 
 
@@ -97,10 +97,10 @@ int Command4Eyebrow::ExecCmd(RobotFace &RobPose) const
 
   for(int i = 0; i < 10; i++)
   {
-    RobPose.eye_up[id] = old_angle + (angle - old_angle) * (i+1) / 10.0;
-    RobPose.eye_down[id] = old_pos + (pos - old_pos) * (i+1) / 10.0;
+    RobPose.eyebrow_angle[id] = old_angle + (angle - old_angle) * (i+1) / 10.0;
+    RobPose.eyebrow_pos[id] = old_pos + (pos - old_pos) * (i+1) / 10.0;
 
-    RobPose.Update();
+    RobPose.UpdateEyebrows(id);
 
     std::chrono::milliseconds duration((int)((1000.0f*100.0f/speed)/10.0f));
     std::this_thread::sleep_for(duration);
@@ -119,7 +119,7 @@ bool Command4Eyebrow::ReadParams(std::istream& Strm_CmdsList)
    */
 
    char c;
-   Strm_CmdsList >> id >> c >> angle >> c >> pos >> c >> speed >> c;
+   Strm_CmdsList >> id >> c >> pos >> c >> angle >> c >> speed >> c;
    if(Strm_CmdsList.fail())
    {
     return false;

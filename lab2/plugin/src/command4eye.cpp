@@ -103,7 +103,7 @@ int Command4Eye::ExecCmd(RobotFace &RobPose) const
     RobPose.eye_up[id] = old_up + (up - old_up) * (i+1) / 10.0;
     RobPose.eye_down[id] = old_down + (down - old_down) * (i+1) / 10.0;
 
-    RobPose.Update();
+    RobPose.UpdateEyes(id);
     //cout << RobPose.eye_up[id] << ", " << RobPose.eye_down[id] << "\n";
 
     std::chrono::milliseconds duration((int)((1000.0f*100.0f/speed)/10.0f));

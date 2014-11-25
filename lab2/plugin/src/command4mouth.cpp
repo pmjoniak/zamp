@@ -104,7 +104,7 @@ int Command4Mouth::ExecCmd(RobotFace &RobPose) const
     RobPose.mouth_up = old_up + (up - old_up) * (i+1) / 10.0;
     RobPose.mouth_down = old_down + (down - old_down) * (i+1) / 10.0;
 
-    RobPose.Update();
+    RobPose.UpdateMouth();
     std::chrono::milliseconds duration((int)((1000.0f*100.0f/speed)/10.0f));
     std::this_thread::sleep_for(duration);
   } 

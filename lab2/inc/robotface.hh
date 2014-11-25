@@ -41,10 +41,15 @@ struct RobotFace {
 	int eyebrow_angle[2] = {20,20};
 	int eyebrow_pos[2] = {20, 20}; 
 	int eyebrow_cx[2] = {10, 50};
-	int eyebrow_cy[2] = {30, 30}; 
+	int eyebrow_cy[2] = {30, 30};
+
+	int width, height;
 	RobotFace();
 
-	virtual void Update() = 0;
+	virtual void UpdateEyes(int id) = 0;
+	virtual void UpdateEyebrows(int id) = 0;
+	virtual void UpdateMouth() = 0;
+	virtual void Init() = 0;
 };	
 
 

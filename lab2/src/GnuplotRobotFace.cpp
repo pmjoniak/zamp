@@ -4,6 +4,12 @@
 
 GnuplotRobotFace::GnuplotRobotFace()
 {
+
+}
+
+
+void GnuplotRobotFace::Init()
+{
 	lacze.DodajNazwePliku("Oko0.dat",PzG::RR_Ciagly,6);
     lacze.DodajNazwePliku("Oko1.dat",PzG::RR_Ciagly,6);
     lacze.DodajNazwePliku("Usta.dat",PzG::RR_Ciagly,6);
@@ -14,17 +20,45 @@ GnuplotRobotFace::GnuplotRobotFace()
 
 
 
-    lacze.UstawZakresY(-100,150);
-    lacze.UstawZakresX(-35,90);
-    Update();
+    lacze.UstawZakresY(0,height);
+    lacze.UstawZakresX(0,width);
+    SaveAll();
 }
 
-void GnuplotRobotFace::Update()
+
+void GnuplotRobotFace::Draw()
+{
+	std::unique_lock<std::mutex> lck(draw_mutex);
+	lacze.Rysuj();
+}
+
+void GnuplotRobotFace::UpdateEyes(int id)
+{
+	SaveEyes(id);
+	Draw();
+}
+
+void GnuplotRobotFace::UpdateEyebrows(int id)
+{
+	SaveEyebrows(id);
+	Draw();
+}
+
+void GnuplotRobotFace::UpdateMouth()
 {
 	SaveMouth();
-	SaveEyes();
-	SaveEyebrows();
-	lacze.Rysuj();
+	Draw();
+}
+
+
+bool GnuplotRobotFace::SaveAll()
+{
+	SaveMouth();
+	SaveEyes(0);
+	SaveEyebrows(0);
+	SaveEyes(1);
+	SaveEyebrows(1);
+	return true;
 }
 
 bool GnuplotRobotFace::SaveFile(const std::vector<Wektor2D>& points, std::ostream&  out, int cx, int cy)
@@ -56,41 +90,36 @@ bool GnuplotRobotFace::SaveMouth()
 	return true;
 }
 
-bool GnuplotRobotFace::SaveEyes()
+bool GnuplotRobotFace::SaveEyes(int id)
 {
-	for(int id = 0; id < 2; id++)
-	{
-		std::ofstream  out((id == 0 ? "Oko0.dat" : "Oko1.dat"));
+	
+	std::ofstream  out((id == 0 ? "Oko0.dat" : "Oko1.dat"));
 
-		if (!out.is_open()) return false;
-
-
-		std::vector<Wektor2D>  GornaPowieka = { {-12,0}, {-5,(double)eye_up[id]}, {5,(double)eye_up[id]}, {12,0} };
-		std::vector<Wektor2D>  DolnaPowieka = { {-12,0}, {-5,(double)eye_down[id]}, {5,(double)eye_down[id]}, {12,0} };
+	if (!out.is_open()) return false;
 
 
-		if (!SaveFile(GornaPowieka,out, eye_cx[id], eye_cy[id])) return false;
-		out << std::endl;
-		if (!SaveFile(DolnaPowieka,out, eye_cx[id], eye_cy[id])) return false;
-		out.close();
-	}
+	std::vector<Wektor2D>  GornaPowieka = { {-12,0}, {-5,(double)eye_up[id]}, {5,(double)eye_up[id]}, {12,0} };
+	std::vector<Wektor2D>  DolnaPowieka = { {-12,0}, {-5,(double)eye_down[id]}, {5,(double)eye_down[id]}, {12,0} };
+
+
+	if (!SaveFile(GornaPowieka,out, eye_cx[id], eye_cy[id])) return false;
+	out << std::endl;
+	if (!SaveFile(DolnaPowieka,out, eye_cx[id], eye_cy[id])) return false;
+	out.close();
 	return true;
 }
 
-bool GnuplotRobotFace::SaveEyebrows()
+bool GnuplotRobotFace::SaveEyebrows(int id)
 {
-	for(int id = 0; id < 2; id++)
-	{
-		std::ofstream  out((id == 0 ? "Brew0.dat" : "Brew1.dat"));
+	std::ofstream  out((id == 0 ? "Brew0.dat" : "Brew1.dat"));
 
-		if (!out.is_open()) return false;
+	if (!out.is_open()) return false;
 
-		float off = 20*std::tan(eyebrow_angle[id] * 3.14159265 / 180);
-		std::vector<Wektor2D>  Brew = { {-15, eyebrow_pos[id] + off}, {15, eyebrow_pos[id] - off } };
+	float off = 20*std::tan(eyebrow_angle[id] * 3.14159265 / 180);
+	std::vector<Wektor2D>  Brew = { {-15, eyebrow_pos[id] + off}, {15, eyebrow_pos[id] - off } };
 
 
-		if (!SaveFile(Brew, out, eyebrow_cx[id], eyebrow_cy[id])) return false;
-		out << std::endl;
-	}
+	if (!SaveFile(Brew, out, eyebrow_cx[id], eyebrow_cy[id])) return false;
+	out << std::endl;
 	return true;
 }

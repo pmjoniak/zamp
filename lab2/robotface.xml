@@ -1,0 +1,31 @@
+<RobotFace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation='grammar/scene.xsd' >
+  <Object Name="Twarz">
+    <Parameter Name="Szerokosc" Value="150"/>
+    <Parameter Name="Wysokosc" Value="250"/>
+  </Object>  
+  <Object Name="Oko">
+    <Parameter Name="Id" Value="1"/>
+    <Parameter Name="Wspolrzedna_x" Value="50"/>
+    <Parameter Name="Wspolrzedna_y" Value="130"/>
+  </Object>  
+  <Object Name="Oko">
+    <Parameter Name="Id" Value="2"/>
+    <Parameter Name="Wspolrzedna_x" Value="100"/>
+    <Parameter Name="Wspolrzedna_y" Value="130"/>
+  </Object>  
+  <Object Name="Usta">
+    <Parameter Name="Wspolrzedna_x" Value="75"/>
+    <Parameter Name="Wspolrzedna_y" Value="70"/>
+  </Object>  
+  <Object Name="Brew">
+    <Parameter Name="Id" Value="1"/>
+    <Parameter Name="Wspolrzedna_x" Value="50"/>
+    <Parameter Name="Wspolrzedna_y" Value="200"/>
+  </Object>   
+  <Object Name="Brew">
+    <Parameter Name="Id" Value="2"/>
+    <Parameter Name="Wspolrzedna_x" Value="100"/>
+    <Parameter Name="Wspolrzedna_y" Value="200"/>
+  </Object>      
+</RobotFace>

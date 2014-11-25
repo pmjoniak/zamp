@@ -14,7 +14,7 @@ RobotFace::RobotFace()
 	eye_cy[1] = 30; 
 	
 	mouth_cx = 30;
-	mouth_cy = 0;
+	mouth_cy = -30;
 	mouth_down = -60;
 	mouth_up = -40;
 	mouth_side = 20;

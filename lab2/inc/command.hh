@@ -35,15 +35,15 @@
     */
    virtual ~Command() {}
    /*!
-    * \brief
+    * \brief wypisuje polecenie
     */
    virtual void PrintCmd() const = 0;
    /*!
-    * \brief
+    * \brief wywoluje polecenie
     */
    virtual int ExecCmd( RobotFace   &RobFace ) const = 0;
    /*!
-    * \brief
+    * \brief wczytuje parametry
     */
    virtual bool ReadParams(std::istream& Strm_CmdsList) = 0;
  };

@@ -44,10 +44,18 @@ class LibInterface {
     */
     void Detach() { lib_handle = NULL; }
    /*!
-    * \brief Zwraca 
+    * \brief Zwraca nazwe polecenia poprzez wywolanie funkcji z biblioteki
     */
     const char*  GetCmdName() const { return fun_GetCmdName(); }
+
+    /*!
+    * \brief Wypisuje skladnie polecenia poprzez wywolanie funkcji z biblioteki
+    */ 
     void  PrintSyntax() const { fun_PrintSyntax(); }
+
+    /*!
+    * \brief Tworzy komęde poprzez wywolanie funkcji z biblioteki
+    */    
     Command * CreateCmd() const { return fun_CreateCmd(); }
   private:
    /*!
@@ -66,7 +74,15 @@ class LibInterface {
     *  które zdefiniowane jest w danej bibliotece.
     */   
   const char* (*fun_GetCmdName)();
+
+  /*!
+    * \brief Wskaźnik na funkcję wipusująca składnię polecenia
+    */   
   void (*fun_PrintSyntax)(void);
+
+  /*!
+    * \brief Wskaźnik na funkcję tworząca komendę.
+    */     
   Command *(*fun_CreateCmd)(void);
 
   /*

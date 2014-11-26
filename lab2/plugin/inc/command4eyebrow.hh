@@ -19,18 +19,9 @@
 #include "command.hh"
 #include <vector>
 
-/*!
- * \file
- * \brief Definicja klasy Command4Eye
- *
- * Plik zawiera definicję klasy Command4Eye ...
- */
 
 /*!
- * \brief Modeluje polecenie dla robota mobilnego, które wymusza jego
- *        ruch do przodu
- *
- *  Klasa modeluje ...
+ * \brief Klasa modeluje komende brwi
  */
 class Command4Eyebrow: public Command {
   /*

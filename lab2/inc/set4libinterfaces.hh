@@ -7,19 +7,9 @@
 
 
 /*!
- * \file
- * 
- * \brief Zawiera ...
- *
- *  ...
- */
-
-
-
-/*!
  * \brief Zbiór bibliotek odpowiadających poszczególnym poleceniem
  *
- * Klasa modeluje ... (należy samodzielnie rozwinąć ten opis)
+ * Klasa modeluje zbior bibliotek. umozliwia dodawanie i odejmowanie bibliotek oraz wyszukiwanie po nazwie polecenia
  */
 class Set4LibInterfaces: public std::map<std::string,LibInterface*> {
   /*!
@@ -36,6 +26,10 @@ class Set4LibInterfaces: public std::map<std::string,LibInterface*> {
     * \brief Dodaje nowa bibliotekę
     */
   bool AddLib(const char* sLibName);
+
+   /*!
+    * \brief Usuwa bibliotekę
+    */  
   bool SubLib(const char* sLibName);
   /*!
    * \brief Szuka interfejsu biblioteki odpowiadającej danemu poleceniu

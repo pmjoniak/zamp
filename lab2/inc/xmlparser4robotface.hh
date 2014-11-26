@@ -25,11 +25,34 @@ private:
   int eye_id = -1;
   int eyebrow_id = -1;
 
+   /*!
+    * \brief Pobiera wartosc z atrybutu "Value"
+    */
   float getAttrValue(const   xercesc::Attributes&     attrs);
+
+   /*!
+  * \brief Pobiera wartosc z atrybutu "Name"
+  */
   std::string getName(const   xercesc::Attributes&     attrs);
+
+   /*!
+  * \brief Zajmuje sie interpretacja parametrow dla twarzy
+  */
   void Twarz(const   xercesc::Attributes&     attrs);
+
+   /*!
+  * \brief Zajmuje sie interpretacja parametrow dla Oczu
+  */  
   void Oko(const   xercesc::Attributes&     attrs);
+
+   /*!
+  * \brief Zajmuje sie interpretacja parametrow dla Ust
+  */  
   void Usta(const   xercesc::Attributes&     attrs);
+
+  /*!
+  * \brief Zajmuje sie interpretacja parametrow dla Brwi
+  */
   void Brew(const   xercesc::Attributes&     attrs);
 
 

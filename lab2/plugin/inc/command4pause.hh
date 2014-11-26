@@ -18,13 +18,6 @@
 
 #include "command.hh"
 
-/*!
- * \file
- * \brief Definicja klasy Command4Eye
- *
- * Plik zawiera definicję klasy Command4Eye ...
- */
-
 class Command4Pause: public Command {
   /*
    *  Tu należy zdefiniować pola, które są niezbędne

@@ -19,46 +19,33 @@
 #include "command.hh"
 #include <vector>
 
-/*!
- * \file
- * \brief Definicja klasy Command4Eye
- *
- * Plik zawiera definicję klasy Command4Eye ...
- */
 
 /*!
- * \brief Modeluje polecenie dla robota mobilnego, które wymusza jego
- *        ruch do przodu
- *
- *  Klasa modeluje ...
+ * \brief Klasa modeluje komede odpowiadajaca za animacje oka
  */
 class Command4Eye: public Command {
-  /*
-   *  Tu należy zdefiniować pola, które są niezbędne
-   *  do przechowywania wartości parametrów danego polecenia.
-   *  Ponieżej zdefiniowane jest tylko jedno pole jako przykład.
-   */
+
   int up, down, id, speed;
 
  public:
   /*!
-   * \brief
+   * \brief Inicjalizuje zmienne
    */
   Command4Eye();  
   /*!
-   * \brief
+   * \brief Wypisuje komende
    */
   virtual void PrintCmd() const;
   /*!
-   * \brief
+   * \brief wykonuje komende
    */
   virtual int ExecCmd( RobotFace   &pRobFace ) const;
   /*!
-   * \brief
+   * \brief wczytuje parametry
    */
   virtual bool ReadParams(std::istream& Strm_CmdsList);
   /*!
-   * \brief
+   * \brief zwraca nazwe komendy za wykonywanie ktorej odpowiada
    */
   static const char* GetCmdName();
   /*!

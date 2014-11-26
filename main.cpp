@@ -130,6 +130,10 @@ bool ZbudujOko(const char *sNazwaPliku, int id, int gorna, int dolna)
 }
 
 
+struct Usto
+{
+	int up,down,side;
+};
 
 
 class Glowna
@@ -137,8 +141,9 @@ class Glowna
 
 private:
 	PzG::LaczeDoGNUPlota  Lacze;
+	Usto usto = {20,0,20};
 	int last_usta_p1,last_usta_p2,last_usta_p3;
-	int last_oko[2][2] = {{20,-20}, {20,-20}};
+	int last_oko[2][2] = {{20,-20}, {20,-20}}; //oko1_gora, oko1_dol oko2_gora oko2_dol
 	//bool oko_init[2] = {false, false};
 
 public:
@@ -159,14 +164,6 @@ public:
 		Lacze.Rysuj();
 	}
 
-	bool Zapisz( const vector<Wektor2D>& ZbPunktow, ostream&  StrmWy, double TransY = 0 )
-	{
-		for (auto Elem : ZbPunktow) {
-		Elem.y += TransY;
-		StrmWy << Elem << endl;
-		}
-		return !StrmWy.fail();
-	}
 
 	bool execPreprocesor(const char* fileName, istringstream &iSStream)
 	{

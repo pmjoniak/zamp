@@ -46,9 +46,21 @@ struct RobotFace {
 	int width, height;
 	RobotFace();
 
+  /*!
+    * \brief Aktualizuje wizualizacje Oka
+    */   
 	virtual void UpdateEyes(int id) = 0;
+  /*!
+    * \brief Aktualizuje wizualizacje Brwi
+    */   	
 	virtual void UpdateEyebrows(int id) = 0;
+  /*!
+    * \brief Aktualizuje wizualizacje ust.
+    */   	
 	virtual void UpdateMouth() = 0;
+  /*!
+    * \brief Inicjalizuje twarz.
+    */   	
 	virtual void Init() = 0;
 };	
 

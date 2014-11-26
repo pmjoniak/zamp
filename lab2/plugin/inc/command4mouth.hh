@@ -18,18 +18,9 @@
 
 #include "command.hh"
 
-/*!
- * \file
- * \brief Definicja klasy Command4Mouth
- *
- * Plik zawiera definicję klasy Command4Mouth ...
- */
 
 /*!
- * \brief Modeluje polecenie dla robota mobilnego, które wymusza jego
- *        ruch do przodu
- *
- *  Klasa modeluje ...
+ * \brief Klasa modeluje komede ust
  */
 class Command4Mouth: public Command {
   /*

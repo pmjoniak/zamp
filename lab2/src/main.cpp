@@ -22,6 +22,7 @@
 #include <xercesc/sax2/DefaultHandler.hpp>
 #include <xercesc/util/XMLString.hpp>
 #include "xmlparser4robotface.hh"
+#include <thread>
 
 using std::cout;
 using std::cerr;
@@ -120,8 +121,8 @@ class ProgramExecuter
 private:
   Set4LibInterfaces&  LibsSet;
   GnuplotRobotFace robot_face;
-  vector<Command*> commands;
-
+  //vector<Command*> commands;
+  vector<vector<Command*>> commands;
 
 public:
 
@@ -153,18 +154,31 @@ public:
   {
     commands.clear();
     string Keyword;
+    bool parallel = false;
     while (i_stream >> Keyword) 
     {
       //cout << "Wczytano " << Keyword << "\n";
-      auto lib  = LibsSet.FindLib4Cmd(Keyword.c_str());
-      if(lib)
+      if(Keyword == "START_PARALLEL")
       {
-        auto command = lib->CreateCmd();
-        if(command)
+        parallel = true;
+        commands.push_back({});
+      }
+      else if(Keyword == "END_PARALLEL")
+        parallel = false;
+      else{
+        auto lib  = LibsSet.FindLib4Cmd(Keyword.c_str());
+        if(lib)
         {
-          command->ReadParams(i_stream);
-          //command->PrintCmd();
-          commands.push_back(command);
+          auto command = lib->CreateCmd();
+          if(command)
+          {
+            command->ReadParams(i_stream);
+            //command->PrintCmd();
+            if(parallel)
+              commands.back().push_back(command);
+            else
+              commands.push_back({command});
+          }
         }
       }
     }
@@ -179,18 +193,26 @@ public:
       return false;
     }
 
-    for(auto& command : commands)
+    for(auto& command_vec : commands)
     {
-      command->ExecCmd(robot_face);
+      vector<thread> thread_vec;
+      for(auto& cmd : command_vec)
+      {
+        thread th(&Command::ExecCmd, cmd, std::ref(robot_face));
+        thread_vec.push_back(std::move(th));
+      }
+      for(auto& th : thread_vec)
+        th.join();
     }
     return true;
   }
 
   void showSequence()
   {
-    for(auto& command : commands)
+    for(auto& command_vec : commands)
     {
-      command->PrintCmd();
+      for(auto& cmd : command_vec)
+        cmd->PrintCmd();
     }
   }
 

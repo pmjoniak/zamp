@@ -7,8 +7,8 @@ obj:
 __plugin__:
 	cd plugin; make
 
-CPPFLAGS=-Wall -pedantic -Iinc -std=c++11 -L.local/lib -lreadline
-LDFLAGS=-Wall -lreadline
+CPPFLAGS=-Wall -pedantic -Iinc -std=c++11 -L.local/lib -lreadline -lpthread
+LDFLAGS=-Wall -lreadline -lpthread
 
 interp: obj/main.o obj/robotface.o plugin/obj/Wektor2D.o plugin/obj/lacze_do_gnuplota.o obj/set4libinterfaces.o obj/libinterface.o obj/GnuplotRobotFace.o obj/xmlparser4robotface.o
 	g++ ${LDFLAGS} -o interp  obj/main.o plugin/obj/Wektor2D.o plugin/obj/lacze_do_gnuplota.o obj/robotface.o obj/set4libinterfaces.o obj/libinterface.o obj/GnuplotRobotFace.o obj/xmlparser4robotface.o -ldl -lxerces-c

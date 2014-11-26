@@ -22,21 +22,28 @@ Pauza 3000000;
 */
 
 //zdenerwowanie
+START_PARALLEL
 Oko 0, -20, -20, 300;
 Oko 1, -20, -20, 300;
-Usta 25, 30, 30, 300;
+END_PARALLEL
+START_PARALLEL
 Brew 0, 5, 50, 300;
 Brew 1, 5, -50, 300;
+END_PARALLEL
+
+Usta 25, 30, 30, 300;
 
 
 Pauza 1000000;
 
 //zdenerwowanie
+START_PARALLEL
 Oko 0, -30, 30, 300;
 Oko 1, -30, 30, 300;
 Usta -40, 20, 0, 300;
 Brew 0, 5, 0, 300;
 Brew 1, 5, 0, 300;
+END_PARALLEL
 
 
 Pauza 1000000;

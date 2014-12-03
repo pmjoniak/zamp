@@ -10,10 +10,10 @@ __plugin__:
 CPPFLAGS=-Wall -pedantic -Iinc -std=c++11 -L.local/lib -lreadline -lpthread
 LDFLAGS=-Wall -lreadline -lpthread
 
-interp: obj/main.o obj/robotface.o plugin/obj/Wektor2D.o plugin/obj/lacze_do_gnuplota.o obj/set4libinterfaces.o obj/libinterface.o obj/GnuplotRobotFace.o obj/xmlparser4robotface.o
-	g++ ${LDFLAGS} -o interp  obj/main.o plugin/obj/Wektor2D.o plugin/obj/lacze_do_gnuplota.o obj/robotface.o obj/set4libinterfaces.o obj/libinterface.o obj/GnuplotRobotFace.o obj/xmlparser4robotface.o -ldl -lxerces-c
+interp: obj/main.o obj/robotface.o plugin/obj/Wektor2D.o plugin/obj/lacze_do_gnuplota.o obj/set4libinterfaces.o obj/libinterface.o obj/GnuplotRobotFace.o obj/xmlparser4robotface.o obj/CommandExecutor.o
+	g++ ${LDFLAGS} -o interp  obj/main.o plugin/obj/Wektor2D.o plugin/obj/lacze_do_gnuplota.o obj/robotface.o obj/set4libinterfaces.o obj/libinterface.o obj/GnuplotRobotFace.o obj/xmlparser4robotface.o obj/CommandExecutor.o -ldl -lxerces-c
 
-obj/main.o: src/main.cpp inc/command.hh inc/Wektor2D.hh
+obj/main.o: src/main.cpp inc/command.hh inc/Wektor2D.hh inc/CommandExecutor.hh
 	g++ -c ${CPPFLAGS} -o obj/main.o src/main.cpp
 
 obj/GnuplotRobotFace.o: src/GnuplotRobotFace.cpp inc/GnuplotRobotFace.hh
@@ -30,6 +30,9 @@ obj/libinterface.o: src/libinterface.cpp inc/libinterface.hh inc/command.hh
 
 obj/xmlparser4robotface.o: src/xmlparser4robotface.cpp inc/xmlparser4robotface.hh
 	g++ -c ${CPPFLAGS} -o obj/xmlparser4robotface.o src/xmlparser4robotface.cpp
+
+obj/CommandExecutor.o: src/CommandExecutor.cpp inc/CommandExecutor.hh
+	g++ -c ${CPPFLAGS} -o obj/CommandExecutor.o src/CommandExecutor.cpp
 
 clean:
 	rm -f obj/* interp

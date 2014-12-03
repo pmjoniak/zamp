@@ -19,11 +19,7 @@
 #include "command.hh"
 
 class Command4Pause: public Command {
-  /*
-   *  Tu należy zdefiniować pola, które są niezbędne
-   *  do przechowywania wartości parametrów danego polecenia.
-   *  Ponieżej zdefiniowane jest tylko jedno pole jako przykład.
-   */
+
   int time_us;
   
  public:
@@ -32,20 +28,20 @@ class Command4Pause: public Command {
    */
   Command4Pause();  
   /*!
-   * \brief
+   * \brief  wypisuje komede z parametrami
    */
 
   virtual void PrintCmd() const;
   /*!
-   * \brief
+   * \brief wykonuje polecenie
    */
   virtual int ExecCmd( RobotFace   &pRobFace ) const;
   /*!
-   * \brief
+   * \brief  wczytuje parametry polecenia
    */
   virtual bool ReadParams(std::istream& Strm_CmdsList);
   /*!
-   * \brief
+   * \brief  Zwraca nazwe polecenia ktore interpretuje
    */
   static const char* GetCmdName();
   /*!

@@ -14,16 +14,9 @@
 #include <iostream>
 
 /*!
- * \file
- * \brief Definicja klasy RobotFace
- *
- * Plik zawiera definicję klasy RobotFace
- */
-
-/*!
  * \brief Modeluje zestaw informacji określający ekspresję twarzy robota
  *
- *  Klasa modeluje ...
+ *  Klasa abstrakcyjna nalezy podziedziczy z niej w klase precyzujaco sposob wyswietlania twarzy
  */
 struct RobotFace {
   // ...

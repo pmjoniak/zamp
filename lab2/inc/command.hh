@@ -1,30 +1,15 @@
 #ifndef  COMMAND_HH
 #define  COMMAND_HH
 
-/*+- SVN Keywords ----------------------------------------------------+
- *|                                                                   |
- *| $HeadURL::                                                      $:|
- *|     $Rev::                                                      $:|
- *|    $Date::                                                      $:|
- *|  $Author::                                                      $:|
- *|                                                                   |
- *+-------------------------------------------------------------------+
- */
+
 
 #include <iostream>
 #include "robotface.hh"
 
 /*!
- * \file
- * \brief Definicja klasy Command
- *
- * Plik zawiera definicję klasy Command ...
- */
-
-/*!
  * \brief Modeluje abstrakcyjne polecenie dla robota mobilnego
  *
- *  Klasa modeluje ...
+ *  Klasa zawiera wirtualne funkcje które muszą zostac przeladowane w klasach pochodnych
  */
  class Command {
   public:

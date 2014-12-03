@@ -7,6 +7,10 @@
 #include <mutex>
 #include <thread>
 
+/*!
+* \brief Kalsa dziediczaca z RoboFace odpowiada za rysownanie twarzy z uzyciem gnuplota
+*
+*/
 class GnuplotRobotFace : public RobotFace
 {
 private:
@@ -20,10 +24,12 @@ private:
 	bool SaveMouth();
 	/*!
     * \brief Zapisuje parametry oka do pliku
+    * \param id - numer oka do zapisania
     */   	
 	bool SaveEyes(int id);
 	/*!
     * \brief Zapisuje parametry brwi do pliku
+    * \param id - numer brwi do zapisania
     */   	
 	bool SaveEyebrows(int id);
 	/*!
@@ -41,10 +47,12 @@ public:
 
 	/*!
     * \brief Zapisuje parametry oka do pliku i odrysowuje twarz.
+    * \param id - numer oka do aktualizacji
     */    
 	void UpdateEyes(int id);
 	/*!
     * \brief Zapisuje parametry brwi do pliku i odrysowuje twarz.
+    * \param id - numer brwi do aktualizacji
     */   
 	void UpdateEyebrows(int id);
   	/*!

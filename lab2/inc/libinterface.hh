@@ -28,7 +28,7 @@ class LibInterface {
    /*!
     * \brief Usuwa wszystkie obiekty z listy.
     */
-    LibInterface(): lib_handle(NULL), fun_GetCmdName(NULL) {}
+    LibInterface(): lib_handle(NULL), fun_GetCmdName(NULL), fun_PrintSyntax(NULL),  fun_CreateCmd(NULL) {}
    /*!
     * \brief Powinien zwolnić bilbiotekę, z którą jest skojarzony
     */
@@ -84,10 +84,6 @@ class LibInterface {
     * \brief Wskaźnik na funkcję tworząca komendę.
     */     
   Command *(*fun_CreateCmd)(void);
-
-  /*
-   *  Podobnie nalezy definiowac inne polecenia i nazwy
-   */
 };
 
 
